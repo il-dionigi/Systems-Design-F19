@@ -1,13 +1,21 @@
 import os
 
-os.system("sudo hciconfig hci0 up")
-os.system("sudo hciconfig hci0 leadv 3")
+#os.system("sudo hciconfig hci0 up")
+#os.system("sudo hciconfig hci0 leadv 3")
 
 UUID = "ab c4" # Max 4 bytes (in hex)
 ServiceID = "cf de" # Max 4 bytes (in hex)
-msg = "zabcdefghijklmnopqrs" # Max 20 bytes (char)
+#msg = "zabcdefghijklmnopqrs" # Max 20 bytes (char)
+msg  = str(input())
+if len(msg) > 20:
+	l = len(msg)-20
+	print("Input has " + str(l) + " too many characters")
+	exit() 
+elif len(msg) < 13:
+	for i in range(13-len(msg)):
+		msg = msg + "0"
 
-print(len(msg))
+#print(len(msg))
 
 dif = 20 - len(msg)
 maxSizeMajor = 31
@@ -39,4 +47,5 @@ for l in msg:
 for i in range(dif):
 	command = command + "00 "
 
-print(command)
+#print(command) # Uncomment if not on Pi
+os.system(command) # Uncomment if on Pi
