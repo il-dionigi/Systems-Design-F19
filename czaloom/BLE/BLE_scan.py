@@ -1,9 +1,18 @@
-import os
-import time
+from bluepy.btle import Scanner, DefaultDelegate
 
-for i in range(99):
-	os.system("sudo hcitool -i hci0 cmd 0x08 0x0008 1E 02 01 06 1A FF 4C 00 02 15 C7 C1 A1 BF BB 00 4C AD 87 04 9F 2D 29 17 DE D2 00 00 00 00 C8 00")
-	start = time.time()
-	while time.time() - start < 0.15:
-     		pass
+class ScanDelegate(DefaultDelegate):
+        def __init__(self):
+                DefaultDelegate.__init__(self) 
 
+        def handleDiscovery(self,dev,isNewDev,isNewData):
+                if isNewDev:
+                        print("Discovered Device" , dev.addr)
+                elif isNewData:
+                        print("Recieved New Data from" , dev.addr)
+scanner = Scanner().withDelegate(ScanDelegate())
+devices = scanner.scan(10.0)
+
+for dev in devices:
+        print("Device %s (%s), RSSI=%d dB" % (dev.addr, dev.addrType, dev.rssi))
+        for (adtype, desc, value) in dev.getScanData():
+       		print("  %s = %s" % (desc, value))
