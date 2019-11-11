@@ -18,9 +18,14 @@ import pandas as pd
 import json
 
 from flask import Flask
+from flask import render_template
 from flask_bootstrap import Bootstrap
 
 #Will use bootstrap for frontend
+
+
+app = Flask(__name__)
+Bootstrap(app)
 
 def _init():
 
@@ -43,8 +48,6 @@ def _init():
 	workbook = gc.open(SPREADSHEET)
 	sheet = workbook.sheet1
 
-
-
 	#We now have our row, column, and role_index of each person!
 	data = pd.DataFrame(sheet.get_all_records())
 	column_names = {'What role number (printed label) on your Raspberry Pi do you have?': 'role_id',
@@ -58,15 +61,51 @@ def _init():
 	data.drop_duplicates(subset='role_id', keep='first', inplace=False)
 	return data
 
-
-'''
-app = Flask(__name__)
-
 @app.route("/")
 def hello():
 	data = _init()
-	return "Hello, World!"
-'''
+	container = """<div class="container">\n\t{}
+	</div>
+	"""
+	rows = ""
+	row_num = 0
+	max_row = data["row"].max()
+	max_col = data["col"].max()
+	print("max_row: " + str(max_row) + "max_col: " + str(max_col))
+	#TODO: Bugfix this to have a container that isnt completely empty!
+	for row in range(0, max_row + 1):
+		#print(row)
+		rows += """ <div class="row"> \n\t {} \n\t </div> """
+		col_num = 0
+		_row = ""
+		for col in range(0, max_col + 1):
+			sub_data = data.loc[(data["col"] == col_num) & (data["row"] == row_num)]
+			#print(sub_data)
+			#timestamp = sub_data["timestamp"]
+			if sub_data.empty:
+				#_row.format("(Row, Col) = (" + str(row) + " , " + str(col) + " )")
+				_row += """<div class="col"> Empty </div>\n"""
+				print("Entered!")
+			else:
+				_row += """<div class="col"> {} </div>\n"""
+				str_subdata = str(sub_data)
+				#print(_row)
+				print(str(sub_data['role_id'])[2:26])
+				_row = _row.format("(Row, Col) = (" + str(row_num) + " , " + str(col_num) + " )" + "\n" + "role_id: " + str(sub_data['role_id'])[4:8].strip())
+				#row.format(str_subdata)
+				#rows.format(row_num)
+			col_num += 1
+		#print(rows)
+		#print(_row)
+		rows = rows.format(_row)
+		row_num += 1
+	container = container.format(rows)
+	#print(str(container))
+	return render_template("template.html", data_content=container)
 
 if __name__ == "__main__":
-	data = _init()
+	#data = _init()
+	#a = hello()
+	#app = Flask(__name__)
+	#Bootstrap(app)
+	app.run(debug=True)
