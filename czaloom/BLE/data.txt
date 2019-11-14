@@ -1,0 +1,612 @@
+('Discovered Device', u'5e:62:65:50:1b:fb')
+('Discovered Device', u'50:79:55:98:bc:a8')
+('Discovered Device', u'03:59:f0:6d:b1:52')
+('Discovered Device', u'68:f6:75:64:3b:0b')
+('Discovered Device', u'3d:1a:32:50:5c:cc')
+('Discovered Device', u'12:08:9e:44:00:d2')
+('Discovered Device', u'74:90:4f:03:16:fb')
+('Discovered Device', u'38:71:39:b9:55:89')
+('Discovered Device', u'17:74:29:77:c7:ec')
+('Discovered Device', u'10:cf:c8:6a:0a:84')
+('Discovered Device', u'3c:1a:e5:0a:4d:a0')
+('Discovered Device', u'04:bc:86:37:43:49')
+('Discovered Device', u'4d:91:1f:f8:64:05')
+('Discovered Device', u'33:53:65:11:ac:1f')
+('Discovered Device', u'4a:1d:77:2a:53:a8')
+('Discovered Device', u'f4:0f:24:3b:1a:af')
+('Discovered Device', u'57:67:01:78:31:1a')
+('Discovered Device', u'27:bf:1e:8b:39:4a')
+('Discovered Device', u'4b:5f:18:1f:6d:af')
+('Discovered Device', u'76:3a:9f:f0:5c:84')
+('Discovered Device', u'63:f9:00:6c:fb:12')
+('Discovered Device', u'70:dc:b3:72:88:d7')
+('Discovered Device', u'43:e4:9e:25:f1:86')
+('Discovered Device', u'41:55:db:a5:c4:43')
+('Discovered Device', u'53:2e:b0:d7:7d:8d')
+('Discovered Device', u'32:06:d8:43:48:4b')
+('Discovered Device', u'68:aa:cc:c6:b1:1a')
+('Discovered Device', u'1b:3a:d6:1b:c2:c7')
+('Discovered Device', u'66:31:88:d0:9b:ec')
+('Discovered Device', u'77:25:7e:69:49:4e')
+('Discovered Device', u'64:42:6f:53:54:11')
+('Discovered Device', u'0a:ed:07:71:40:ad')
+('Discovered Device', u'7a:80:c7:34:22:28')
+('Discovered Device', u'30:d9:b7:0c:41:52')
+('Discovered Device', u'33:53:cf:df:8b:b0')
+('Discovered Device', u'53:c5:fe:a9:0b:e3')
+('Discovered Device', u'40:88:0e:40:10:cd')
+('Discovered Device', u'10:52:c2:ba:8f:cf')
+('Discovered Device', u'88:e9:fe:83:30:fd')
+('Discovered Device', u'5a:91:cd:9c:da:32')
+('Discovered Device', u'34:5e:6f:1e:d7:94')
+('Discovered Device', u'04:dc:87:14:64:d0')
+('Discovered Device', u'1f:34:ae:9b:d9:02')
+('Discovered Device', u'4d:7c:ce:df:56:0a')
+('Discovered Device', u'b2:11:50:2f:9f:f9')
+('Discovered Device', u'19:97:46:e7:3d:87')
+('Discovered Device', u'8c:85:90:a3:b1:e5')
+('Discovered Device', u'48:c9:e0:24:8f:82')
+('Discovered Device', u'6f:bd:cf:82:b4:52')
+('Discovered Device', u'14:99:e2:0e:08:b8')
+('Discovered Device', u'43:90:02:6e:55:4c')
+('Discovered Device', u'b7:52:b4:9f:8c:20')
+('Discovered Device', u'7f:d9:cd:df:7a:cb')
+('Discovered Device', u'6c:38:e6:26:6f:d6')
+('Discovered Device', u'08:39:d1:f6:d5:09')
+('Discovered Device', u'78:c6:6d:4d:2d:0e')
+('Discovered Device', u'74:10:0a:e5:62:dd')
+('Discovered Device', u'54:8a:c4:f0:e4:28')
+('Discovered Device', u'77:c7:e4:ed:1b:26')
+('Discovered Device', u'28:11:a5:5c:4b:8b')
+('Discovered Device', u'1a:04:dc:e1:5d:5c')
+('Discovered Device', u'f7:48:11:51:fb:e7')
+('Discovered Device', u'1d:a5:28:d9:c3:ad')
+('Discovered Device', u'55:ae:03:e1:ec:93')
+('Discovered Device', u'b7:52:c0:30:28:11')
+('Discovered Device', u'48:cf:ff:5a:cc:19')
+('Discovered Device', u'72:c9:0d:bd:cf:36')
+('Discovered Device', u'4a:6a:e0:29:cf:9f')
+('Discovered Device', u'69:a7:30:50:77:ed')
+('Discovered Device', u'1c:48:00:ab:45:91')
+('Discovered Device', u'7d:13:69:71:dc:d9')
+('Discovered Device', u'71:ad:2b:69:99:0d')
+('Discovered Device', u'60:71:1d:fd:ec:69')
+('Discovered Device', u'11:e5:bb:cb:19:7d')
+('Discovered Device', u'7b:c5:f3:72:4a:46')
+('Discovered Device', u'6c:2e:95:a3:bd:ad')
+('Discovered Device', u'b7:52:c1:50:4c:1a')
+('Discovered Device', u'f0:18:98:2e:aa:3a')
+('Discovered Device', u'b7:52:c0:40:90:21')
+('Discovered Device', u'73:00:29:70:9e:2b')
+('Discovered Device', u'01:44:8a:d4:a8:f6')
+('Discovered Device', u'44:48:86:6d:c6:6a')
+('Discovered Device', u'd0:d2:b0:99:c2:40')
+('Discovered Device', u'71:5e:32:71:97:c1')
+('Discovered Device', u'13:b4:55:c9:7b:dd')
+('Discovered Device', u'41:e3:cc:25:9e:b3')
+('Discovered Device', u'25:eb:1b:f7:9c:00')
+('Discovered Device', u'23:0c:45:4b:c9:d1')
+('Discovered Device', u'78:4f:43:6f:eb:51')
+('Discovered Device', u'78:00:cb:64:b0:bb')
+('Discovered Device', u'8c:85:90:bb:d3:d4')
+('Discovered Device', u'48:ac:d7:c6:44:46')
+('Discovered Device', u'45:ac:4e:43:aa:7c')
+('Discovered Device', u'ce:40:f2:ce:d0:f0')
+('Discovered Device', u'63:fb:b0:71:87:a6')
+('Recieved New Data from', u'40:88:0e:40:10:cd')
+('Discovered Device', u'7e:a8:c5:51:1f:09')
+('Discovered Device', u'50:b8:0b:b5:d2:b6')
+('Discovered Device', u'2c:41:a1:5b:02:88')
+('Discovered Device', u'b7:52:c1:50:b4:1b')
+('Discovered Device', u'40:04:39:c6:62:7d')
+('Discovered Device', u'56:c5:b8:f6:86:43')
+('Discovered Device', u'78:4f:43:61:37:ef')
+('Discovered Device', u'c8:d0:83:e6:87:1c')
+('Discovered Device', u'49:eb:87:da:67:52')
+('Discovered Device', u'3d:77:2e:04:77:b7')
+('Discovered Device', u'58:a0:18:6f:1f:ba')
+('Discovered Device', u'b8:4b:a5:6f:e7:d0')
+('Discovered Device', u'11:59:da:04:00:f1')
+('Discovered Device', u'2c:41:a1:5a:27:f3')
+('Discovered Device', u'66:bb:b8:f3:49:83')
+('Discovered Device', u'2c:41:a1:53:ec:d4')
+('Discovered Device', u'4a:d4:4e:ff:33:de')
+('Discovered Device', u'44:8c:64:3d:de:d4')
+('Discovered Device', u'17:3d:33:6a:61:b4')
+('Discovered Device', u'51:03:c9:9b:9a:16')
+('Discovered Device', u'49:39:6c:89:ff:3c')
+('Discovered Device', u'1d:32:29:22:a2:d0')
+('Discovered Device', u'b8:27:eb:28:ee:43')
+('Recieved New Data from', u'78:00:cb:64:b0:bb')
+('Discovered Device', u'e8:a9:86:d3:3f:87')
+('Recieved New Data from', u'ce:40:f2:ce:d0:f0')
+('Discovered Device', u'7f:98:b4:f6:f6:13')
+('Discovered Device', u'28:21:b6:50:f2:a9')
+('Discovered Device', u'42:12:ee:e7:8a:ca')
+('Discovered Device', u'49:44:d7:4d:71:01')
+('Discovered Device', u'7e:e4:1d:ef:9e:72')
+('Discovered Device', u'2f:55:8d:83:af:a5')
+('Discovered Device', u'66:4b:62:cb:45:da')
+('Discovered Device', u'de:25:f2:2d:b2:de')
+('Discovered Device', u'16:21:33:8c:b9:de')
+('Discovered Device', u'b7:52:c0:b0:ac:17')
+('Discovered Device', u'd6:a5:3e:60:c1:b8')
+('Discovered Device', u'45:1b:47:11:dc:4d')
+('Discovered Device', u'63:27:1e:5f:b4:93')
+('Discovered Device', u'5d:19:64:07:48:32')
+('Discovered Device', u'4d:7b:f4:9f:8d:b3')
+('Discovered Device', u'56:8f:da:5a:ab:4b')
+('Recieved New Data from', u'42:12:ee:e7:8a:ca')
+('Discovered Device', u'6f:d8:63:88:ed:82')
+('Discovered Device', u'47:a2:f8:61:e2:f7')
+('Recieved New Data from', u'55:ae:03:e1:ec:93')
+('Discovered Device', u'39:b0:43:cc:70:11')
+('Discovered Device', u'78:4f:43:5b:7c:8b')
+('Recieved New Data from', u'78:00:cb:64:b0:bb')
+('Discovered Device', u'08:df:1f:e7:13:b2')
+('Discovered Device', u'6a:10:fc:4e:08:63')
+('Discovered Device', u'44:ac:22:05:b3:8a')
+('Recieved New Data from', u'de:25:f2:2d:b2:de')
+('Discovered Device', u'5e:86:d8:76:0e:2d')
+('Discovered Device', u'06:4e:43:1f:ab:a1')
+('Recieved New Data from', u'44:48:86:6d:c6:6a')
+('Discovered Device', u'b8:0e:9e:e0:27:fc')
+Device 6c:38:e6:26:6f:d6 (random), RSSI=-87 dB
+  Flags = 1a
+  Manufacturer = 4c0010050318c4261d
+Device 7d:13:69:71:dc:d9 (random), RSSI=-92 dB
+  Manufacturer = 4c00071901022022f48f010000b1fad6153a0bf08de97625e198e0a223
+Device 19:97:46:e7:3d:87 (random), RSSI=-88 dB
+  Manufacturer = 060001092002e096b63a15f261133143e4bd8ed5911b5392d5d0b0c85a
+Device 8c:85:90:a3:b1:e5 (public), RSSI=-84 dB
+  Flags = 06
+  Manufacturer = 4c0010050b1cb3e66d
+Device 1d:32:29:22:a2:d0 (random), RSSI=-96 dB
+  Manufacturer = 060001092002c5025600862d692cd169c1d5a8cd79925577a782ac7be8
+Device 2c:41:a1:53:ec:d4 (public), RSSI=-91 dB
+  Flags = 1a
+  Tx Power = 08
+  Complete 16b Services = 0000febe-0000-1000-8000-00805f9b34fb
+  Complete Local Name = LE-reserved_K
+  Manufacturer = 010b01000ed05ba3da
+Device 63:27:1e:5f:b4:93 (random), RSSI=-96 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c001005511cff8dc4
+Device 6c:2e:95:a3:bd:ad (random), RSSI=-76 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c0010075b1f130f7d7880
+Device 10:cf:c8:6a:0a:84 (random), RSSI=-84 dB
+  Manufacturer = 0600010920028d183fc361d1fb9b382ec349b7e278c5ab64e26886d82e
+Device 3d:77:2e:04:77:b7 (random), RSSI=-90 dB
+  Manufacturer = 060001092002ee1d83758a5d2df7ea64f09e2c972929bfa96860a7abdf
+Device 28:11:a5:5c:4b:8b (public), RSSI=-88 dB
+  Flags = 1a
+  Complete 16b Services = 0000febe-0000-1000-8000-00805f9b34fb
+  Manufacturer = 010b01004c444144a7
+Device e8:a9:86:d3:3f:87 (random), RSSI=-72 dB
+  Flags = 06
+  Complete 16b Services = 0000feed-0000-1000-8000-00805f9b34fb
+  Complete Local Name = Tile
+Device 4d:91:1f:f8:64:05 (random), RSSI=-68 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c001005031caaa3f7
+Device b8:4b:a5:6f:e7:d0 (public), RSSI=-90 dB
+  Flags = 06
+  Complete Local Name = bd
+  Manufacturer = 383638343436303335313732363633
+Device 13:b4:55:c9:7b:dd (random), RSSI=-88 dB
+  Manufacturer = 0600010920028cbe8cbd8c8fedd730294ae3415f508a4b38bc6be1edf9
+Device b2:11:50:2f:9f:f9 (public), RSSI=-90 dB
+  Flags = 06
+  Complete Local Name = bd
+  Manufacturer = 383636343235303333313738343337
+Device 77:c7:e4:ed:1b:26 (random), RSSI=-83 dB
+  Manufacturer = 4c000719010f202b998f01000508c4a99c39e43436572d7539b8d75e58
+Device 1f:34:ae:9b:d9:02 (random), RSSI=-92 dB
+  Manufacturer = 0600010920026c9fa72625238609e5a723367950b80b60e11060333a84
+Device 4a:6a:e0:29:cf:9f (random), RSSI=-97 dB
+  Flags = 1a
+  Tx Power = 07
+  Manufacturer = 4c001006331eef4806b6
+Device 70:dc:b3:72:88:d7 (random), RSSI=-61 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c001005031814c77e
+Device 78:4f:43:61:37:ef (public), RSSI=-85 dB
+  Flags = 06
+  Manufacturer = 4c0010050718a185c2
+Device 32:06:d8:43:48:4b (random), RSSI=-56 dB
+  Manufacturer = 06000109200240e3b7893355717f586eba58278067d8bb84b29b175e51
+Device 63:fb:b0:71:87:a6 (random), RSSI=-74 dB
+  Manufacturer = 06000109210a434a80322430426f77656e416e
+Device f4:0f:24:3b:1a:af (public), RSSI=-49 dB
+  Flags = 06
+  Manufacturer = 4c0010054b1c40623b
+Device 12:08:9e:44:00:d2 (random), RSSI=-79 dB
+  Manufacturer = 06000109200215fee09752b445fabb2a7293ffd00d6a8c774fdcb8b3bb
+Device 3d:1a:32:50:5c:cc (random), RSSI=-60 dB
+  Manufacturer = 0600010920024582dc59ad3328b80f3d918a48ec3cbc34a11c41f3800d
+Device 48:c9:e0:24:8f:82 (random), RSSI=-91 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c001005511c3ca367
+Device 4d:7c:ce:df:56:0a (random), RSSI=-70 dB
+  Flags = 06
+  Manufacturer = 4c0010050b1c25a472
+Device 1d:a5:28:d9:c3:ad (random), RSSI=-90 dB
+  Manufacturer = 060001092002b123d24f265b6705e4065f64da45e4dc7c114c1299c2e6
+Device 78:4f:43:6f:eb:51 (public), RSSI=-98 dB
+  Flags = 06
+  Manufacturer = 4c0010050b1c9b424a
+Device 5e:86:d8:76:0e:2d (random), RSSI=-78 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c001005031c758d3f
+Device 55:ae:03:e1:ec:93 (random), RSSI=-93 dB
+  Flags = 06
+  Manufacturer = 4c000c0e00d6017c85f131d6a8e556d40401
+Device 48:ac:d7:c6:44:46 (random), RSSI=-94 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c00100503184173fd
+Device 48:cf:ff:5a:cc:19 (random), RSSI=-85 dB
+  Flags = 1a
+  Tx Power = 08
+  Manufacturer = 4c001006231eed84ded2
+Device 64:42:6f:53:54:11 (random), RSSI=-78 dB
+  Flags = 06
+  Manufacturer = 4c00100501181dc9f7
+Device 1b:3a:d6:1b:c2:c7 (random), RSSI=-89 dB
+  Manufacturer = 060001092002473d7c10e721b9336c905dff93bf56a49a63093f76462d
+Device 49:39:6c:89:ff:3c (random), RSSI=-94 dB
+  Flags = 06
+  Manufacturer = 4c000c0e00029af4ff74d387daa950f311b2
+Device 53:c5:fe:a9:0b:e3 (random), RSSI=-87 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c0010054b1c4142ac
+Device 16:21:33:8c:b9:de (random), RSSI=-96 dB
+  Manufacturer = 0600010920024ab06d63ae9fb77af20b0ea4c141ba4ddd68a14ede54b8
+Device 1a:04:dc:e1:5d:5c (random), RSSI=-96 dB
+  Manufacturer = 060001092002429f1fb72358216b32bb71203c66ca881cb2e5fb2a640f
+Device 39:b0:43:cc:70:11 (random), RSSI=-99 dB
+  Manufacturer = 060001092002d934d4babd6b263799e2cede35b787de27c4b23575c606
+Device 25:eb:1b:f7:9c:00 (random), RSSI=-85 dB
+  Manufacturer = 0600010f2002b824c2f5e9de0592e60bf242f7822d5cbb560494d9e713
+Device 88:e9:fe:83:30:fd (public), RSSI=-84 dB
+  Flags = 06
+  Manufacturer = 4c0010054b1cb0276a
+Device 45:ac:4e:43:aa:7c (random), RSSI=-91 dB
+  Flags = 06
+  Manufacturer = 4c000c0e006148f76fb5c85f2009ec9c58cc
+Device ce:40:f2:ce:d0:f0 (random), RSSI=-93 dB
+  Appearance = 0000
+  Complete 16b Services = 0000b13d-0000-1000-8000-00805f9b34fb
+  Complete Local Name = RF01P191023137
+  Manufacturer = 4c0002150914233245560f78899eebbcce94eff15024c456c8
+  Flags = 06
+Device 56:8f:da:5a:ab:4b (random), RSSI=-98 dB
+  Flags = 06
+  Manufacturer = 4c0010050118490fc3
+Device 28:21:b6:50:f2:a9 (random), RSSI=-98 dB
+  Manufacturer = 060001092002687c16ff719ce1e0874cbbe4d0f67bdcbb4e0c648c7d59
+Device 7a:80:c7:34:22:28 (random), RSSI=-69 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c0010050318a9b87b
+Device 68:aa:cc:c6:b1:1a (random), RSSI=-80 dB
+  Flags = 1a
+  Manufacturer = 4c001005111827915a
+Device 41:55:db:a5:c4:43 (random), RSSI=-95 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c001005031ceec41d
+Device 7f:d9:cd:df:7a:cb (random), RSSI=-94 dB
+  Flags = 1a
+  Manufacturer = 4c0010051a18109c44
+Device 71:ad:2b:69:99:0d (random), RSSI=-92 dB
+  Manufacturer = 4c00071901022002f38f010000b8654ee9a33f2529522960584149b976
+Device 2c:41:a1:5b:02:88 (public), RSSI=-84 dB
+  Flags = 1a
+  Complete 16b Services = 0000febe-0000-1000-8000-00805f9b34fb
+  Manufacturer = 010a41005244cbe5c9
+Device 4a:1d:77:2a:53:a8 (random), RSSI=-70 dB
+  Manufacturer = 0600010920024fb5a797f4ea4f402dc54405b101ab18b6da46124b0a1e
+Device 23:0c:45:4b:c9:d1 (random), RSSI=-88 dB
+  Manufacturer = 06000109200267f6103e25b916a18c11918c86f9c963b0603f2b467929
+Device c8:d0:83:e6:87:1c (public), RSSI=-92 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c000f08c00a1746dd00040b10020100
+Device 33:53:cf:df:8b:b0 (random), RSSI=-84 dB
+  Manufacturer = 0600010920022256acbdf2644079527ff01b1694f22a5dacba805ffdad
+Device 50:79:55:98:bc:a8 (random), RSSI=-62 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c00100511187373e3
+Device 5a:91:cd:9c:da:32 (random), RSSI=-42 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c001005131cdb25e2
+Device b7:52:c1:50:b4:1b (public), RSSI=-92 dB
+  Flags = 06
+  Complete Local Name = bd
+  Manufacturer = 383636343235303331383731383530
+Device 17:74:29:77:c7:ec (random), RSSI=-54 dB
+  Manufacturer = 06000109200261e651ce1e59850ede323917838989621499acfecf8880
+Device d0:d2:b0:99:c2:40 (public), RSSI=-72 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c000f08c00aeaa70d00400b10020104
+Device 58:a0:18:6f:1f:ba (random), RSSI=-91 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c001005031cc09b35
+Device 63:f9:00:6c:fb:12 (random), RSSI=-51 dB
+  Flags = 1a
+  Tx Power = 18
+  Manufacturer = 4c001005019841b961
+Device 01:44:8a:d4:a8:f6 (random), RSSI=-99 dB
+  Manufacturer = 060001092002af8b76158501f22221e2b2475b18a9d27ecae1c4a55469
+Device 4b:5f:18:1f:6d:af (random), RSSI=-52 dB
+  Flags = 1a
+  Manufacturer = 4c0010020304
+Device 44:ac:22:05:b3:8a (random), RSSI=-99 dB
+  Flags = 06
+  Manufacturer = 4c000c0e00a6ab4ffcbd59e10314aa3983ac
+Device b7:52:b4:9f:8c:20 (public), RSSI=-80 dB
+  Flags = 06
+  Complete Local Name = bd
+  Manufacturer = 383636343235303332323634363931
+Device 72:c9:0d:bd:cf:36 (random), RSSI=-92 dB
+  Flags = 06
+  Manufacturer = 4c0010050b1c26c80f
+Device 03:59:f0:6d:b1:52 (random), RSSI=-81 dB
+  Manufacturer = 0600010920023976b0bfb25734c77b08c203a831402aa20b7da986fb86
+Device 5e:62:65:50:1b:fb (random), RSSI=-59 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c0010061a1e71cd7944
+Device b8:0e:9e:e0:27:fc (public), RSSI=-97 dB
+  Flags = 06
+  Complete Local Name = bd
+  Manufacturer = 383638343436303335313631333032
+Device 0a:ed:07:71:40:ad (random), RSSI=-79 dB
+  Manufacturer = 0600010f2002d4c39c22ced7ebd2d8a2254bc210abf2edfb8704b1734e
+Device 14:99:e2:0e:08:b8 (public), RSSI=-93 dB
+  Flags = 1a
+  Manufacturer = 4c000906010000000000
+Device 7e:e4:1d:ef:9e:72 (random), RSSI=-96 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c0010051318909a21
+Device 7f:98:b4:f6:f6:13 (random), RSSI=-100 dB
+  Flags = 1a
+  Manufacturer = 4c001005031cf91f8f
+Device 50:b8:0b:b5:d2:b6 (random), RSSI=-85 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c00100503185d265f
+Device b7:52:c0:40:90:21 (public), RSSI=-94 dB
+  Flags = 06
+  Complete Local Name = bd
+  Manufacturer = 383636343235303331383033303737
+Device 74:10:0a:e5:62:dd (random), RSSI=-91 dB
+  Manufacturer = 0600010920029a1d245aba6f3f7750393fe9d22ed459ae532933e9a31b
+Device 6f:d8:63:88:ed:82 (random), RSSI=-99 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c00100503182bcbae
+Device 51:03:c9:9b:9a:16 (random), RSSI=-91 dB
+  Flags = 06
+  Manufacturer = 4c001005471cc7b238
+Device 34:5e:6f:1e:d7:94 (random), RSSI=-96 dB
+  Manufacturer = 0600010f20023751b36ddd127fa2219576bdd6a537b74f0c80251e0097
+Device 66:bb:b8:f3:49:83 (random), RSSI=-97 dB
+  Flags = 1a
+  Manufacturer = 4c0010050318cca321
+Device 4d:7b:f4:9f:8d:b3 (random), RSSI=-82 dB
+  Flags = 1a
+  Tx Power = 18
+  Manufacturer = 4c0010050198d2d6bb
+Device 77:25:7e:69:49:4e (random), RSSI=-54 dB
+  Flags = 1a
+  Manufacturer = 4c001005011cfaff7e
+Device 49:44:d7:4d:71:01 (random), RSSI=-82 dB
+  Flags = 1a
+  Tx Power = 07
+  Manufacturer = 4c00100531184630dc
+Device 66:31:88:d0:9b:ec (random), RSSI=-88 dB
+  Flags = 1a
+  Manufacturer = 4c00100513181a7f4f
+Device 56:c5:b8:f6:86:43 (random), RSSI=-94 dB
+  Flags = 06
+  Manufacturer = 4c001005011cec6494
+Device b7:52:c0:b0:ac:17 (public), RSSI=-98 dB
+  Flags = 06
+  Complete Local Name = bd
+  Manufacturer = 383636343235303331333430303936
+Device b7:52:c0:30:28:11 (public), RSSI=-94 dB
+  Flags = 06
+  Complete Local Name = bd
+  Manufacturer = 383636343235303332323635393436
+Device de:25:f2:2d:b2:de (random), RSSI=-100 dB
+  Appearance = 0000
+  Complete 16b Services = 0000b13d-0000-1000-8000-00805f9b34fb
+  Complete Local Name = RF01P190860147    
+  Manufacturer = 4c0002150914233245560f78899eebbcce94eff0b668b61fc8
+  Flags = 06
+Device 38:71:39:b9:55:89 (random), RSSI=-62 dB
+  Manufacturer = 060001092002f9d0cbf6981f57e30152766089a053227cc5346dbc8ccd
+Device 17:3d:33:6a:61:b4 (random), RSSI=-86 dB
+  Flags = 1b
+  Manufacturer = 4c000906030f0a000110
+Device 40:04:39:c6:62:7d (random), RSSI=-88 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c001006031ec8c39cb8
+Device 54:8a:c4:f0:e4:28 (random), RSSI=-76 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c001005031c7606bd
+Device 69:a7:30:50:77:ed (random), RSSI=-93 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c001005131cdce13a
+Device 47:a2:f8:61:e2:f7 (random), RSSI=-91 dB
+  Flags = 06
+  Manufacturer = 4c000c0e089b5be28395dde7f6a144bdd95e
+Device f7:48:11:51:fb:e7 (random), RSSI=-85 dB
+  Appearance = 0000
+  Complete 16b Services = 0000b13d-0000-1000-8000-00805f9b34fb
+  Complete Local Name = RF01P191023245    
+  Flags = 06
+Device 2c:41:a1:5a:27:f3 (public), RSSI=-71 dB
+  Flags = 1a
+  Complete 16b Services = 0000febe-0000-1000-8000-00805f9b34fb
+  Manufacturer = 010a4100700bd4f900
+Device f0:18:98:2e:aa:3a (public), RSSI=-90 dB
+  Flags = 06
+  Manufacturer = 4c0010054b1c8abc50
+Device d6:a5:3e:60:c1:b8 (random), RSSI=-88 dB
+  Manufacturer = 4c00121900a6841bd45971ef45edb8d8e21d2fcc77bd30e9cc1e790100
+Device 6f:bd:cf:82:b4:52 (random), RSSI=-87 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c001005031c2371ca
+Device 1c:48:00:ab:45:91 (random), RSSI=-103 dB
+  Manufacturer = 060001092002ec612e853c71b6611948730c903d9bf6d7ed782960d18f
+Device 40:88:0e:40:10:cd (random), RSSI=-81 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c000c0e0050dbea9deda1c1fbd3fa1560d610064b1eb08d247f
+Device 33:53:65:11:ac:1f (random), RSSI=-83 dB
+  Manufacturer = 060001092002f524f47bfda8470938184360bb9f5ff3a7c6337a8c3c5e
+Device 3c:1a:e5:0a:4d:a0 (random), RSSI=-89 dB
+  Manufacturer = 06000109200259645ae9edb6e192347c6ba12173d74ee332ef8ab2cebc
+Device 66:4b:62:cb:45:da (random), RSSI=-86 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c00100511180f2983
+Device 43:e4:9e:25:f1:86 (random), RSSI=-86 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c001006131e73f77cbc
+Device 78:00:cb:64:b0:bb (random), RSSI=-80 dB
+  Flags = 06
+  Manufacturer = 4c000c0e00e991877463b678c0dd02cca7a9
+Device 68:f6:75:64:3b:0b (random), RSSI=-71 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c001006131ac709c8a4
+Device 08:df:1f:e7:13:b2 (public), RSSI=-94 dB
+  Flags = 02
+  Complete 16b Services = 0000febe-0000-1000-8000-00805f9b34fb
+  Manufacturer = 1000400a0200
+Device 2f:55:8d:83:af:a5 (random), RSSI=-99 dB
+  Manufacturer = 0600010920021a123d2a804a770f16aa6eb873f7f7ba19651738fcf347
+Device 44:8c:64:3d:de:d4 (random), RSSI=-83 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c001006131a96d23a8a
+Device 4a:d4:4e:ff:33:de (random), RSSI=-92 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c001006011a6200245d
+Device 78:4f:43:5b:7c:8b (public), RSSI=-94 dB
+  Flags = 06
+  Manufacturer = 4c001005071c1f3b5c
+Device 7b:c5:f3:72:4a:46 (random), RSSI=-91 dB
+  Flags = 06
+  Manufacturer = 4c000c0e007847886b661188b894c08a09fb
+Device 60:71:1d:fd:ec:69 (random), RSSI=-87 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c001005031cd97a3d
+Device 49:eb:87:da:67:52 (random), RSSI=-91 dB
+  Flags = 1a
+  Manufacturer = 4c0010051b18c9e4c5
+Device 74:90:4f:03:16:fb (random), RSSI=-85 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c0010051318d4145b
+Device 71:5e:32:71:97:c1 (random), RSSI=-88 dB
+  Flags = 06
+  Manufacturer = 4c001005071c32969d
+Device 8c:85:90:bb:d3:d4 (public), RSSI=-92 dB
+  Flags = 06
+  Manufacturer = 4c0010050b1c4ceb1d
+Device 27:bf:1e:8b:39:4a (random), RSSI=-69 dB
+  Manufacturer = 060001092002cc50750871185c9d040f23f53fcba51f95ee9cadb94c14
+Device 10:52:c2:ba:8f:cf (random), RSSI=-86 dB
+  Manufacturer = 0600010920023368ed2944a3fa1cb1acd9dcb2784c324350dc322ebb01
+Device 43:90:02:6e:55:4c (random), RSSI=-38 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c001005031cc82872
+Device 30:d9:b7:0c:41:52 (random), RSSI=-92 dB
+  Manufacturer = 060001092002407dc94ccd28b3f9dde36035ba2fef964961d799d24920
+Device 7e:a8:c5:51:1f:09 (random), RSSI=-86 dB
+  Flags = 1a
+  Tx Power = 08
+  Manufacturer = 4c0010066b1e85adcfd5
+Device 08:39:d1:f6:d5:09 (random), RSSI=-71 dB
+  Manufacturer = 060001092002af9dcf694169279c7adca6b094dd0ac51f679e20aba165
+Device 57:67:01:78:31:1a (random), RSSI=-66 dB
+  Flags = 06
+  Manufacturer = 4c000c0e086465986ebe33e1b524bd97dc29
+Device 78:c6:6d:4d:2d:0e (random), RSSI=-95 dB
+  Flags = 1a
+  Manufacturer = 4c000c0e00bbbc267fd7d5a372abc0bb40de10051b1c45ce83
+Device 11:59:da:04:00:f1 (random), RSSI=-100 dB
+  Manufacturer = 060001092002edc2afa87c17a90b5ddee23811ddb24ec409cea351e73a
+Device 41:e3:cc:25:9e:b3 (random), RSSI=-82 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c001005031c2c188c
+Device 73:00:29:70:9e:2b (random), RSSI=-89 dB
+  Manufacturer = 0600010920020aa95d459021bdc455e2b9904847925cbf3e71b4da2476
+Device 04:dc:87:14:64:d0 (random), RSSI=-88 dB
+  Manufacturer = 0600010920020ace6347e20e809d6d4119a502d79d6b97544574cbe7ab
+Device 42:12:ee:e7:8a:ca (random), RSSI=-90 dB
+  Manufacturer = 4c00071901062000f58f073d0088321073da013d213c01dbf9c7d3daa4
+Device 76:3a:9f:f0:5c:84 (random), RSSI=-98 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c00100503188733ed
+Device 06:4e:43:1f:ab:a1 (random), RSSI=-89 dB
+  Manufacturer = 060001092002b9e5c0b276e08c2fbee35724b5fe7e951631d0f174f1d7
+Device 11:e5:bb:cb:19:7d (random), RSSI=-91 dB
+  Manufacturer = 0600010920027610d64941c1d5d508ac8e1c128e269273267faddc1d18
+Device b7:52:c1:50:4c:1a (public), RSSI=-98 dB
+  Flags = 06
+  Complete Local Name = bd
+  Manufacturer = 383636343235303331383539323336
+Device 6a:10:fc:4e:08:63 (random), RSSI=-84 dB
+  Flags = 1a
+  Tx Power = 08
+  Manufacturer = 4c0010063a1eacf8290c
+Device 44:48:86:6d:c6:6a (random), RSSI=-90 dB
+  Flags = 1a
+  Tx Power = 07
+  Manufacturer = 4c001005231cfec10b
+Device 5d:19:64:07:48:32 (random), RSSI=-95 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c0010051e18385632
+Device 04:bc:86:37:43:49 (random), RSSI=-74 dB
+  Manufacturer = 060001092002b5f6c1bd2eb14cccd1d4abc6ee25ec8931a217b7bc82cf
+Device b8:27:eb:28:ee:43 (public), RSSI=-36 dB
+  Flags = 06
+  Complete 16b Services = 0000c4ab-0000-1000-8000-00805f9b34fb
+  16b Service Data = cfde68656c6c6f20776f726c642130
+Device 53:2e:b0:d7:7d:8d (random), RSSI=-78 dB
+  Flags = 1a
+  Manufacturer = 4c001005031c31e389
+Device 45:1b:47:11:dc:4d (random), RSSI=-90 dB
+  Flags = 1a
+  Tx Power = 0c
+  Manufacturer = 4c001006411d04ebd480
