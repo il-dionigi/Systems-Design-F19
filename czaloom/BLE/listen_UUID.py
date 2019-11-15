@@ -6,6 +6,7 @@ import numpy as np
 
 # - SETTINGS - 
 master_pi_address = "b8:27:eb:28:ee:43" #Richard's BLE Address
+master_pi_UUID = "c4ab"
 # ------------
 
 def charhex_to_int(c):
@@ -64,20 +65,24 @@ while(1):
     devices = scanner.scan(10.0)
 
     for dev in devices:
-            if dev.addr == master_pi_address: 
-                id_ = [0,0]
-            	for (adtype, desc, packet) in dev.getScanData():
-                    if desc == "16b Service Data":
-                        id_ = get_ID(packet)
-                if is_new_message(id_, id_list):
-                    if start_flag:
-                        max_num_messages = id_[1]
-                        start_flag = 0
-                        id_list = [None] * max_num_messages
-                        msg_arr = [None] * max_num_messages
-                    id_list[id_[0]] = m_id
-                    msg_arr[id_[0]] = get_Message(packet)
-                    message_count = message_count + 1
+            #Method 2
+            id_ = [0,0]
+            found_flag = 0
+            for (adtype, desc, packet) in dev.getScanData():
+                if desc == "Complete 16b Services":
+                    if packet[4:8] == master_pi_UUID:
+                        found_flag = 1
+                if desc == "16b Service Data" and found_flag:
+                    id_ = get_ID(packet)
+            if is_new_message(id_, id_list) and found_flag:
+                if start_flag:
+                    max_num_messages = id_[1]
+                    start_flag = 0
+                    id_list = [None] * max_num_messages
+                    msg_arr = [None] * max_num_messages
+                id_list[id_[0]] = m_id
+                msg_arr[id_[0]] = get_Message(packet)
+                message_count = message_count + 1
     if message_count == max_num_messages:
         break
 

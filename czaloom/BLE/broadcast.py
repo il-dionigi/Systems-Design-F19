@@ -1,5 +1,6 @@
 import os
 import math
+import time 
 
 #os.system("sudo hciconfig hci0 up")
 #os.system("sudo hciconfig hci0 leadv 3")
@@ -61,3 +62,4 @@ for i in range(number_of_messages):
 
 	#print(command) # Uncomment if not on Pi
 	os.system(command) # Uncomment if on Pi
+	time.sleep(5)

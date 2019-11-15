@@ -1,2 +1,2 @@
-for i in range(1,5+1):
-	print(i)
+s = "0000c4ab-0000-1000-8000-00805f9b34fb"
+print(s[4:8])
