@@ -65,21 +65,21 @@ while(1):
     devices = scanner.scan(10.0)
 
     for dev in devices:
-            #Method 1
-            if dev.addr == master_pi_address: 
-                id_ = [0,0]
-            	for (adtype, desc, packet) in dev.getScanData():
-                    if desc == "16b Service Data":
-                        id_ = get_ID(packet)
-                if is_new_message(id_, id_list):
-                    if start_flag:
-                        max_num_messages = id_[1]
-                        start_flag = 0
-                        id_list = [None] * max_num_messages
-                        msg_arr = [None] * max_num_messages
-                    id_list[id_[0]] = m_id
-                    msg_arr[id_[0]] = get_Message(packet)
-                    message_count = message_count + 1
+        #Method 1
+        if dev.addr == master_pi_address: 
+            id_ = [0,0]
+        	for (adtype, desc, packet) in dev.getScanData():
+                if desc == "16b Service Data":
+                    id_ = get_ID(packet)
+            if is_new_message(id_, id_list):
+                if start_flag:
+                    max_num_messages = id_[1]
+                    start_flag = 0
+                    id_list = [None] * max_num_messages
+                    msg_arr = [None] * max_num_messages
+                id_list[id_[0]] = m_id
+                msg_arr[id_[0]] = get_Message(packet)
+                message_count = message_count + 1
     if message_count == max_num_messages:
         break
 
