@@ -71,6 +71,7 @@ while(1):
         	for (adtype, desc, packet) in dev.getScanData():
                 if desc == "16b Service Data":
                     id_ = get_ID(packet)
+                    
             if is_new_message(id_, id_list):
                 if start_flag:
                     max_num_messages = id_[1]
