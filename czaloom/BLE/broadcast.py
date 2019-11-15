@@ -1,51 +1,63 @@
 import os
+import math
 
 #os.system("sudo hciconfig hci0 up")
 #os.system("sudo hciconfig hci0 leadv 3")
 
 UUID = "ab c4" # Max 4 bytes (in hex)
-ServiceID = "cf de" # Max 4 bytes (in hex)
-#msg = "zabcdefghijklmnopqrs" # Max 20 bytes (char)
+
 msg  = str(input())
-if len(msg) > 20:
-	l = len(msg)-20
-	print("Input has " + str(l) + " too many characters")
-	exit() 
-elif len(msg) < 13:
-	for i in range(13-len(msg)):
-		msg = msg + "0"
 
-#print(len(msg))
+number_of_messages = math.ceil(len(msg) / 20.0)
+if len(msg) % 20 != 0:
+	for i in range(20 - len(msg) % 20):
+		msg = msg + "_"
 
-dif = 20 - len(msg)
-maxSizeMajor = 31
-maxSizeMinor = 23
+state = "Transmitting " + str(number_of_messages) + " messages"
+print(state)
 
-if(dif > 0):
-	maxSizeMinor = maxSizeMinor - dif
-	maxSizeMajor = maxSizeMajor - dif
+def hex_to_char(c):
+	if c < 10:
+		return str(c)
+	elif c == 10:
+		return "a"
+	elif c == 11:
+		return "b"
+	elif c == 12:
+		return "c"
+	elif c == 13:
+		return "d"	
+	elif c == 14:
+		return "e"
+	elif c == 15:
+		return "f"
+	else:
+		return "0"
 
-SizeMajor = str(hex(maxSizeMajor))
-SizeMinor = str(hex(maxSizeMinor))
+def int_to_byte(x):
+	byte = ""
+	if(x < 16):
+		byte = "0" + hex_to_char(x)
+	else:
+		byte = hex_to_char(int(x / 16)) + hex_to_char(x % 16)
+	return byte
 
-preamble = "sudo hcitool -i hci0 cmd 0x08 0x0008 "
-preamble = preamble + SizeMajor[2] + SizeMajor[3]
-preamble = preamble + " 02 "
-preamble = preamble + "01 06 " #Configureable  (Flag type, flag data)
-preamble = preamble + "03 "
-preamble = preamble + "03 "
-preamble = preamble + UUID + " " #Configureable (Service data type, MUUID, MUUID)
-preamble = preamble + SizeMinor[2] + SizeMinor[3]
-preamble = preamble	+ " 16 "
-preamble = preamble + ServiceID + " " # (Service data type, mUUID, mUUID)
+ServiceID_ = " " + int_to_byte(number_of_messages) + " "
 
-command = preamble
-for l in msg:
-	hexnum = str(hex(ord(l)))
-	command = command + hexnum[2] + hexnum[3] + " "
+#Add automatic message and id parsing here
 
-for i in range(dif):
-	command = command + "00 "
+preamble = "sudo hcitool -i hci0 cmd 0x08 0x0008 1f 02 10 06 03 03 "
+preamble = preamble + UUID #Configureable (Service data type, MUUID, MUUID)
+preamble = preamble + " 23 16 "
 
-#print(command) # Uncomment if not on Pi
-os.system(command) # Uncomment if on Pi
+for i in range(number_of_messages):
+
+	ServiceID = int_to_byte(i+1) + ServiceID_
+
+	command = preamble + ServiceID
+	for l in msg[i*20:i*20+20]:
+		hexnum = str(hex(ord(l)))
+		command = command + hexnum[2] + hexnum[3] + " "
+
+	#print(command) # Uncomment if not on Pi
+	os.system(command) # Uncomment if on Pi
