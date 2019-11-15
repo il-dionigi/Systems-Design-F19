@@ -58,7 +58,7 @@ scanner = Scanner().withDelegate(ScanDelegate())
 id_list = []
 msg_arr = []
 start_flag = 1
-max_num_messages = 0
+max_num_messages = -1
 message_count = 0
 
 while(1):
