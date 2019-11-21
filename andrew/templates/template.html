@@ -10,6 +10,14 @@
 
 {% block content %}
   {{ data_content|safe }}
+  <center><form action="" method = "post">
+				<input type = "submit" class="btn btn-primary btn-lg" name = "SyncBtn" value="SyncAll" role="button"><br/>
+			</form>
+	</center>
+{% endblock %}
+
+{% block button %}
+	
 {% endblock %}
 
 {% block scripts %}

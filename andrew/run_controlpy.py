@@ -17,12 +17,28 @@ from oauth2client.client import SignedJwtAssertionCredentials
 import pandas as pd
 import json
 
-from flask import Flask
+from flask import Flask, request, jsonify
 from flask import render_template
 from flask_bootstrap import Bootstrap
 
 #Will use bootstrap for frontend
 
+#Structure of a BLE packet to send when broadcasting:
+#
+
+def process_loc(sync_loc):
+	temp_str = sync_loc
+	temp_str = temp_str.replace('Sync_', '')
+	at_index = temp_str.find('at')
+	role_id = temp_str[0:at_index]
+	row_col = temp_str[at_index + 2:len(temp_str)]
+
+	#print(row_col)
+	comma_index = row_col.find(',')
+	row = row_col[0:comma_index]
+	col = row_col[comma_index:len(row_col)]
+
+	return role_id, row, col
 
 app = Flask(__name__)
 Bootstrap(app)
@@ -40,7 +56,7 @@ def _init():
 	gc = gspread.authorize(credentials)
 	#Get google sheets information, which is passed from the google form
 	
-	print("The following sheets are available")
+	#print("The following sheets are available")
 	for sheet in gc.openall():
 		print("{} - {}".format(sheet.title, sheet.id))
 
@@ -57,11 +73,11 @@ def _init():
 
 	data.rename(columns=column_names, inplace=True)
 	#data.timestamp = pd.to_datetime(data.timestamp)
-	print(data)
+	#print(data)
 	data.drop_duplicates(subset='role_id', keep='first', inplace=False)
 	return data
 
-@app.route("/")
+@app.route("/", methods = ['POST', 'GET'])
 def hello():
 	data = _init()
 	container = """<div class="container">\n\t{}
@@ -71,7 +87,7 @@ def hello():
 	row_num = 0
 	max_row = data["row"].max()
 	max_col = data["col"].max()
-	print("max_row: " + str(max_row) + "max_col: " + str(max_col))
+	#print("max_row: " + str(max_row) + "max_col: " + str(max_col))
 	#TODO: Bugfix this to have a container that isnt completely empty!
 	for row in range(0, max_row + 1):
 		#print(row)
@@ -85,15 +101,39 @@ def hello():
 			if sub_data.empty:
 				#_row.format("(Row, Col) = (" + str(row) + " , " + str(col) + " )")
 				_row += """<div class="col"> Empty </div>\n"""
-				print("Entered!")
+				#print("Entered!")
 			else:
 				_row += """<div class="col"> {} </div>\n"""
 				str_subdata = str(sub_data)
 				#print(_row)
-				print(str(sub_data['role_id'])[2:26])
-				_row = _row.format("(Row, Col) = (" + str(row_num) + " , " + str(col_num) + " )" + "\n" + "role_id: " + str(sub_data['role_id'])[4:8].strip())
+				#print(str(sub_data['role_id'])[2:26])
+				role_id = str(sub_data['role_id'])[4:8].strip()
+				#_row = _row.format("\n\t<div>(Row, Col) = (" + str(row_num) + " , " + str(col_num) + " )" + "<br>role_id: " + str(sub_data['role_id'])[4:8].strip() + "</div>{}")
+
+				#Add a new line for a button
+				button = ("""\n\t<form action="" method = "post">
+					<input type = "submit" class="btn btn-primary btn-lg" name = "SyncBtn" value="Sync_{}" role="button"><br/>\n
+					</form>""")
+
+				button = button.format(str(role_id) + "at" + str(row_num) + "," + str(col_num))
+
+				_row = _row.format(button)
+				#print("_row: " + str(_row))
+				#print("_button: " + str(button))
 				#row.format(str_subdata)
 				#rows.format(row_num)
+
+				if request.method == 'POST':
+					sync_loc = request.form.get('SyncBtn')
+					#print(sync_loc)
+					if sync_loc == "SyncAll":
+						print('SyncAll')
+						#TODO: Send RESYNC All, retry twice!
+					else:
+						this_role, this_row, this_col = process_loc(sync_loc)
+						print(str(this_row))
+						#TODO: Send BLE command that sends the row and column to the role id
+
 			col_num += 1
 		#print(rows)
 		#print(_row)
