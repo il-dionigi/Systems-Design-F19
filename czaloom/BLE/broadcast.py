@@ -7,9 +7,9 @@ import time
 
 UUID = "ab c4" # Max 4 bytes (in hex)
 
-msg  = str(input())
+msg  = str(raw_input())
 
-number_of_messages = math.ceil(len(msg) / 20.0)
+number_of_messages = int(math.ceil(len(msg) / 20.0))
 if len(msg) % 20 != 0:
 	for i in range(20 - len(msg) % 20):
 		msg = msg + "_"
@@ -47,14 +47,14 @@ ServiceID_ = " " + int_to_byte(number_of_messages) + " "
 
 #Add automatic message and id parsing here
 
-preamble = "sudo hcitool -i hci0 cmd 0x08 0x0008 1f 02 10 06 03 03 "
+preamble = "sudo hcitool -i hci0 cmd 0x08 0x0008 1f 02 01 06 03 03 "
 preamble = preamble + UUID #Configureable (Service data type, MUUID, MUUID)
 preamble = preamble + " 23 16 "
 
 for i in range(number_of_messages):
 
 	ServiceID = int_to_byte(i+1) + ServiceID_
-
+	ServiceID = UUID
 	command = preamble + ServiceID
 	for l in msg[i*20:i*20+20]:
 		hexnum = str(hex(ord(l)))

@@ -6,7 +6,7 @@ import os
 UUID = "ab c4" # Max 4 bytes (in hex)
 ServiceID = "cf de" # Max 4 bytes (in hex)
 #msg = "zabcdefghijklmnopqrs" # Max 20 bytes (char)
-msg  = str(input())
+msg  = str(raw_input())
 if len(msg) > 20:
 	l = len(msg)-20
 	print("Input has " + str(l) + " too many characters")
