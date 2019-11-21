@@ -80,6 +80,7 @@ while(1):
 					msg_arr = [None] * max_num_messages
 				id_list[id_[0]] = m_id
 				msg_arr[id_[0]] = get_Message(packet)
+				print(str(id_) +  ": " + get_Message(packet))
 				message_count = message_count + 1
 	if message_count == max_num_messages:
 		break
