@@ -134,34 +134,13 @@ def listen(UUID = "ABC4"):
 	    devices = scanner.scan(10.0)
 
 	    for dev in devices:
-	        id_ = [0,0]
-	        found_flag = 0
-	        for (adtype, desc, packet) in dev.getScanData():
-	            if desc == "Complete 16b Services":
-	                if packet[4:8] == UUID:
-	                    found_flag = 1
-	                    print(packet)
-	            if desc == "16b Service Data" and found_flag:
-	                id_ = get_ID(packet)
-	                print(packet)
-	        if is_new_message(id_, id_list) and found_flag:
-	            if start_flag:
-	                max_num_messages = id_[1]
-	                start_flag = 0
-	                id_list = [None] * max_num_messages
-	                msg_arr = [None] * max_num_messages
-	            id_list[id_[0]] = m_id
-	            msg_arr[id_[0]] = get_Message(packet)
-	            message_count = message_count + 1
-	            print(get_Message(packet))
-	    if message_count == max_num_messages:
-	        break
+	    	if dev.addr == "b8:27:eb:28:ee:43":
+            	print("Device %s (%s), RSSI=%d dB" % (dev.addr, dev.addrType, dev.rssi))
+            	for (adtype, desc, value) in dev.getScanData():
+                	print("  %s = %s" % (desc, value))
+           	 	return value
 
-	message = ""
-	for i in msg_arr:
-	    message = message + i
-
-	return message
+	       
 
 # --- END OF LISTEN DEFINITIONS ---
 
