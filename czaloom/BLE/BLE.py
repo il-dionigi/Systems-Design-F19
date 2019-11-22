@@ -102,7 +102,7 @@ def get_ID(s):
 	return [get_number(s[0:2]),get_number(s[2:4])]
 def get_Message(s):
 	MSG = ""
-	for i in range(4,30,2):
+	for i in range(4,len(s),2):
 		MSG = MSG + get_letter(s[i:i+2])
 	return MSG
 
