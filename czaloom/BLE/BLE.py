@@ -158,7 +158,7 @@ def listen(UUID = "abc4"):
 
 		message = ""
 		for i in msg_arr:
-		message = message + i
+			message = message + i
 
 		return message
 
