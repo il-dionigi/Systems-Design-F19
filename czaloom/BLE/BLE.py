@@ -124,9 +124,6 @@ def listen(UUID = "abc4"):
 	UUID = UUID[2:4] + UUID[0:2]
 	scanner = Scanner().withDelegate(ScanDelegate())
 
-	id_list = []
-	msg_arr = []
-	start_flag = 1
 	max_num_messages = 0
 	message_count = 0
 
@@ -146,13 +143,13 @@ def listen(UUID = "abc4"):
 			        print(packet)
 			        break
 		if is_new_message(id_, id_list) and found_flag:
-		    if start_flag:
-		        max_num_messages = id_[1]
-		        start_flag = 0
-		        id_list = [None] * max_num_messages
-		        msg_arr = [None] * max_num_messages
-		    id_list[id_[0]] = m_id
-		    msg_arr[id_[0]] = get_Message(packet)
+			if start_flag:
+				max_num_messages = id_[1]
+				id_list = [None] * max_num_messages
+				msg_arr = [None] * max_num_messages
+				start_flag = 0
+		    id_list[id_[0]-1] = id_[0]
+		    msg_arr[id_[0]-1] = get_Message(packet)
 		    message_count = message_count + 1
 		    print(get_Message(packet))
 		if message_count == max_num_messages:
