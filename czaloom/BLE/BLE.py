@@ -138,7 +138,7 @@ def listen(UUID = "ABC4"):
 	        found_flag = 0
 	        for (adtype, desc, packet) in dev.getScanData():
 	            if desc == "Complete 16b Services":
-	                if packet[4:8] == master_pi_UUID:
+	                if packet[4:8] == UUID:
 	                    found_flag = 1
 	            if desc == "16b Service Data" and found_flag:
 	                id_ = get_ID(packet)
@@ -151,6 +151,7 @@ def listen(UUID = "ABC4"):
 	            id_list[id_[0]] = m_id
 	            msg_arr[id_[0]] = get_Message(packet)
 	            message_count = message_count + 1
+				print(get_Message(packet))
 	    if message_count == max_num_messages:
 	        break
 
