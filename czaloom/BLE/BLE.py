@@ -126,6 +126,7 @@ def listen(UUID = "abc4"):
 
 	max_num_messages = 0
 	message_count = 0
+	start_flag = 1
 
 	while(1):
 		devices = scanner.scan(10.0)
