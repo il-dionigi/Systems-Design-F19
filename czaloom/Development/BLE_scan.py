@@ -14,7 +14,7 @@ devices = scanner.scan(10.0)
 
 for dev in devices:
         if dev.addr == "b8:27:eb:28:ee:43":
-		print("Device %s (%s), RSSI=%d dB" % (dev.addr, dev.addrType, dev.rssi))
+            print("Device %s (%s), RSSI=%d dB" % (dev.addr, dev.addrType, dev.rssi))
         	for (adtype, desc, value) in dev.getScanData():
        			print("  %s = %s" % (desc, value))
 			print(value)
