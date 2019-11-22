@@ -9,3 +9,4 @@ Rev 2.0 Changelog (11/20/2019)
  (See https://learn.adafruit.com/neopixels-on-raspberry-pi/raspberry-pi-wiring)
 -Change voltage supply for the IR-Receivers to take 5V prior to Diode drop
 -Change top copper pour to 5V_DIODE
+-Added Registered trademark to UCLA logo

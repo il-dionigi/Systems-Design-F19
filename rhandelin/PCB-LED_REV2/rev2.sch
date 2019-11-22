@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.5.2">
+<eagle version="9.5.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -1720,8 +1720,6 @@ Source: &lt;a href="https://datasheet.lcsc.com/szlcsc/Shandong-Jingdao-Microelec
 </sheets>
 <errors>
 <approved hash="113,1,139.596,107.846,FRAME1,,,,,"/>
-<approved hash="113,1,27.7029,152.174,JP1,,,,,"/>
-<approved hash="113,1,17.5429,152.174,JP2,,,,,"/>
 </errors>
 </schematic>
 </drawing>
