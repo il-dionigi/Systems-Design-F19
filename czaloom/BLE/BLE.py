@@ -142,12 +142,12 @@ def listen(UUID = "abc4"):
 					id_ = get_ID(packet)
 					print(packet)
 					break
+		if found_flag and start_flag:
+			max_num_messages = id_[1]
+			id_list = [None] * max_num_messages
+			msg_arr = [None] * max_num_messages
+			start_flag = 0
 		if is_new_message(id_, id_list) and found_flag:
-			if start_flag:
-				max_num_messages = id_[1]
-				id_list = [None] * max_num_messages
-				msg_arr = [None] * max_num_messages
-				start_flag = 0
 			id_list[id_[0]-1] = id_[0]
 			msg_arr[id_[0]-1] = get_Message(packet)
 			message_count = message_count + 1
