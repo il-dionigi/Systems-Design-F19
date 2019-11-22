@@ -151,7 +151,7 @@ def listen(UUID = "ABC4"):
 	            id_list[id_[0]] = m_id
 	            msg_arr[id_[0]] = get_Message(packet)
 	            message_count = message_count + 1
-				print(get_Message(packet))
+	            print(get_Message(packet))
 	    if message_count == max_num_messages:
 	        break
 
