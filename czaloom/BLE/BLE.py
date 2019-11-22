@@ -57,13 +57,12 @@ def BLE_broadcast(data, UUID = "ABC4", Number_of_Broadcast_Cycles = 3, Time_Betw
 
 	preamble = "sudo hcitool -i hci0 cmd 0x08 0x0008 1f 02 01 06 03 03 "
 	preamble = preamble + UUID #Configureable (Service data type, MUUID, MUUID)
-	preamble = preamble + " 23 16 "
+	preamble = preamble + " 17 16 "
 
 	for iteration in range(Number_of_Broadcast_Cycles):
 		for i in range(number_of_messages):
 
 			ServiceID = int_to_byte(i+1) + ServiceID_
-			ServiceID = UUID
 			command = preamble + ServiceID
 			for l in msg[i*20:i*20+20]:
 				hexnum = str(hex(ord(l)))
