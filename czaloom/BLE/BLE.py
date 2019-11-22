@@ -32,12 +32,12 @@ def int_to_byte(x):
 		byte = hex_to_char(int(x / 16)) + hex_to_char(x % 16)
 	return byte
 
-def BLE_broadcast_setup():
+def broadcast_setup():
 	os.system("sudo hciconfig hci0 up")
 	os.system("sudo hciconfig hci0 leadv 3")
 	return
 
-def BLE_broadcast(data, UUID = "ABC4", Number_of_Broadcast_Cycles = 3, Time_Between_Transmissions = 15):
+def broadcast(data, UUID = "ABC4", Number_of_Broadcast_Cycles = 3, Time_Between_Transmissions = 15):
 	# Broadcasts data in 20 byte payloads over Number_of_Broadcast_Cycles with a Time_Between_Transmissions in seconds
 	# UUID is a device identifier, should be 2 bytes no spaces. May be changed if signal is relayed.
 	UUID = str(UUID[0:2]) + " " + str(UUID[2:4]) # Max 4 bytes (in hex)
@@ -120,7 +120,7 @@ class ScanDelegate(DefaultDelegate):
         def __init__(self):
                 DefaultDelegate.__init__(self) 
 
-def BLE_listen(UUID = "ABC4"):
+def listen(UUID = "ABC4"):
 	UUID = UUID[2:4] + UUID[0:2]
 	scanner = Scanner().withDelegate(ScanDelegate())
 
@@ -165,6 +165,6 @@ def BLE_listen(UUID = "ABC4"):
 
 #BLE_broadcast_setup()
 #BLE_broadcast("Hello! This is our ECE180DA Project!")
-BLE_broadcast("AAAAABBBBBAAAAABBBBB")
+#BLE_broadcast("aaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbb")
 
 #print(BLE_listen())

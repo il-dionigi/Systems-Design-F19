@@ -1,0 +1,11 @@
+Rev 2.0 Changelog (11/20/2019)
+
+-Moved top layer silkscreen input text so that connector no longer covers part of it
+-Added Silkscreen to bottom of board input connector to allow connection on either side
+-Modified IR-Receiver silkscreen to make mouting orientation obvious
+-Modified WS2812B silkscreen to make mouting orientation obvious
+-Modified WS2812B footprint (1.5x2.0)mm --> (2.0x2.0)mm to make hand soldering easier
+-Added 1N4001 (Through-hole) and 1N4001W (SOD-123) as voltage dropper for LEDs
+ (See https://learn.adafruit.com/neopixels-on-raspberry-pi/raspberry-pi-wiring)
+-Change voltage supply for the IR-Receivers to take 5V prior to Diode drop
+-Change top copper pour to 5V_DIODE
