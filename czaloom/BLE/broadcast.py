@@ -7,7 +7,7 @@ import time
 
 UUID = "ab c4" # Max 4 bytes (in hex)
 
-msg  = str(raw_input())
+msg  = str(input())
 
 number_of_messages = int(math.ceil(len(msg) / 20.0))
 if len(msg) % 20 != 0:
@@ -49,12 +49,11 @@ ServiceID_ = " " + int_to_byte(number_of_messages) + " "
 
 preamble = "sudo hcitool -i hci0 cmd 0x08 0x0008 1f 02 01 06 03 03 "
 preamble = preamble + UUID #Configureable (Service data type, MUUID, MUUID)
-preamble = preamble + " 23 16 "
+preamble = preamble + " 17 16 "
 
 for i in range(number_of_messages):
 
 	ServiceID = int_to_byte(i+1) + ServiceID_
-	ServiceID = UUID
 	command = preamble + ServiceID
 	for l in msg[i*20:i*20+20]:
 		hexnum = str(hex(ord(l)))
@@ -62,4 +61,6 @@ for i in range(number_of_messages):
 
 	#print(command) # Uncomment if not on Pi
 	os.system(command) # Uncomment if on Pi
-	time.sleep(5)
+	print("START")
+	time.sleep(30)
+	print("ON")

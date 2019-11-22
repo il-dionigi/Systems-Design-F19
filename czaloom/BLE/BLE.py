@@ -1,4 +1,4 @@
-from bluepy.btle import Scanner, DefaultDelegate
+from btle import Scanner, DefaultDelegate
 import os
 import math
 import time 
@@ -37,7 +37,7 @@ def BLE_broadcast_setup():
 	os.system("sudo hciconfig hci0 leadv 3")
 	return
 
-def BLE_broadcast(data, UUID = "ABC4", Number_of_Broadcast_Cycles = 3, Time_Between_Transmissions = 10):
+def BLE_broadcast(data, UUID = "ABC4", Number_of_Broadcast_Cycles = 3, Time_Between_Transmissions = 15):
 	# Broadcasts data in 20 byte payloads over Number_of_Broadcast_Cycles with a Time_Between_Transmissions in seconds
 	# UUID is a device identifier, should be 2 bytes no spaces. May be changed if signal is relayed.
 	UUID = str(UUID[0:2]) + " " + str(UUID[2:4]) # Max 4 bytes (in hex)
@@ -164,7 +164,8 @@ def BLE_listen(UUID = "ABC4"):
 # --- END OF LISTEN DEFINITIONS ---
 
 
-BLE_broadcast_setup()
-BLE_broadcast("Hello! This is our ECE180DA Project!")
+#BLE_broadcast_setup()
+#BLE_broadcast("Hello! This is our ECE180DA Project!")
+BLE_broadcast("AAAAABBBBBAAAAABBBBB")
 
 #print(BLE_listen())
