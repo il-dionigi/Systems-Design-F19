@@ -131,18 +131,18 @@ def listen(UUID = "abc4"):
 	message_count = 0
 
 	while(1):
-		dev = scanner.scan(10.0)
-
-		id_ = [0,0]
-		found_flag = 0
-		for (adtype, desc, packet) in dev.getScanData():
-		    if desc == "Complete 16b Services":
-		        if packet[4:8] == UUID:
-		            found_flag = 1
-		            print(packet)
-		    if desc == "16b Service Data" and found_flag:
-		        id_ = get_ID(packet)
-		        print(packet)
+		devices = scanner.scan(10.0)
+		for dev in devices:
+			id_ = [0,0]
+			found_flag = 0
+			for (adtype, desc, packet) in dev.getScanData():
+			    if desc == "Complete 16b Services":
+			        if packet[4:8] == UUID:
+			            found_flag = 1
+			            print(packet)
+			    if desc == "16b Service Data" and found_flag:
+			        id_ = get_ID(packet)
+			        print(packet)
 		if is_new_message(id_, id_list) and found_flag:
 		    if start_flag:
 		        max_num_messages = id_[1]
