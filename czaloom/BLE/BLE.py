@@ -134,24 +134,24 @@ def listen(UUID = "abc4"):
 		found_flag = 0
 		for dev in devices:
 			for (adtype, desc, packet) in dev.getScanData():
-			    if desc == "Complete 16b Services":
-			        if packet[4:8] == UUID:
-			            found_flag = 1
-			            print(packet)
-			    if desc == "16b Service Data" and found_flag:
-			        id_ = get_ID(packet)
-			        print(packet)
-			        break
+				if desc == "Complete 16b Services":
+					if packet[4:8] == UUID:
+						found_flag = 1
+						print(packet)
+				if desc == "16b Service Data" and found_flag:
+					id_ = get_ID(packet)
+					print(packet)
+					break
 		if is_new_message(id_, id_list) and found_flag:
 			if start_flag:
 				max_num_messages = id_[1]
 				id_list = [None] * max_num_messages
 				msg_arr = [None] * max_num_messages
 				start_flag = 0
-		    id_list[id_[0]-1] = id_[0]
-		    msg_arr[id_[0]-1] = get_Message(packet)
-		    message_count = message_count + 1
-		    print(get_Message(packet))
+			id_list[id_[0]-1] = id_[0]
+			msg_arr[id_[0]-1] = get_Message(packet)
+			message_count = message_count + 1
+			print(get_Message(packet))
 		if message_count == max_num_messages:
 			break
 
