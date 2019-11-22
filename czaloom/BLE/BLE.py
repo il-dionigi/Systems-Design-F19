@@ -124,9 +124,8 @@ def listen(UUID = "abc4"):
 	UUID = UUID[2:4] + UUID[0:2]
 	scanner = Scanner().withDelegate(ScanDelegate())
 
-	max_num_messages = 0
-	message_count = 0
-	start_flag = 1
+	packets = None
+	packets_found = 0
 
 	while(1):
 		devices = scanner.scan(10.0)
@@ -138,29 +137,15 @@ def listen(UUID = "abc4"):
 				if desc == "Complete 16b Services":
 					if packet[4:8] == UUID:
 						found_flag = 1
-						print(packet)
 				if desc == "16b Service Data" and found_flag:
-					id_ = get_ID(packet)
-					print(packet)
-					break
-		if found_flag and start_flag:
-			max_num_messages = id_[1]
-			id_list = [None] * max_num_messages
-			msg_arr = [None] * max_num_messages
-			start_flag = 0
-		if is_new_message(id_, id_list) and found_flag:
-			id_list[id_[0]-1] = id_[0]
-			msg_arr[id_[0]-1] = get_Message(packet)
-			message_count = message_count + 1
-			print(get_Message(packet))
-		if message_count == max_num_messages:
-			break
-
-		message = ""
-		for i in msg_arr:
-			message = message + i
-
-		return message
+					_ID = get_ID(packet[0:4]) 
+					if packets == None:
+						packets = [None] * _ID[1]
+					if packets[_ID[0]-1] == None:
+						packets[_ID[0]-1] = packet
+						packets_found = packets_found + 1
+						if packets_found == _ID[1]:
+							return packets
 
 		   
 
