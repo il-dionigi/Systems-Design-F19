@@ -132,6 +132,7 @@ def listen(UUID = "abc4"):
 
 	while(1):
 		devices = scanner.scan(10.0)
+		packet = ""
 		for dev in devices:
 			id_ = [0,0]
 			found_flag = 0
