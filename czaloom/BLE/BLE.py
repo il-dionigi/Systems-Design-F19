@@ -142,14 +142,16 @@ def listen(UUID = "abc4"):
 					if _ID[0] < 0 or _ID[0] > _ID[1]:
 						pass
 					else:
-						print(get_Message(packet))
+						#print(get_Message(packet))
+						print("Received Message: " + str(_ID[0]))
 						if packets == None:
 							packets = [None] * _ID[1]
 						if packets[_ID[0]-1] == None:
-							packets[_ID[0]-1] = packet
+							#packets[_ID[0]-1] = packet
+							packets[_ID[0]-1] = get_Message(packet)
 							packets_found = packets_found + 1
 							if packets_found == _ID[1]:
-								return packets
+								return ''.join(packets)
 
 		   
 
