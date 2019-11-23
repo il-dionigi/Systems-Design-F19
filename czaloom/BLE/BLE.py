@@ -141,6 +141,8 @@ def listen(UUID = "abc4"):
 					_ID = get_ID(packet[0:4]) 
 					if _ID[0] < 0 or _ID[0] > _ID[1]:
 						pass
+					elif _ID[0] > 5 or _ID[1] > 5:
+						pass
 					else:
 						#print(get_Message(packet))
 						print("Received Message: " + str(_ID[0]))
