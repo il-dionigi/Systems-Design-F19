@@ -139,14 +139,17 @@ def listen(UUID = "abc4"):
 						found_flag = 1
 				if desc == "16b Service Data" and found_flag:
 					_ID = get_ID(packet[0:4]) 
-					print(packet)
-					if packets == None:
-						packets = [None] * _ID[1]
-					if packets[_ID[0]-1] == None:
-						packets[_ID[0]-1] = packet
-						packets_found = packets_found + 1
-						if packets_found == _ID[1]:
-							return packets
+					if _ID[0] < 0 or _ID[0] > _ID[1]:
+						pass
+					else:
+						print(get_Message(packet))
+						if packets == None:
+							packets = [None] * _ID[1]
+						if packets[_ID[0]-1] == None:
+							packets[_ID[0]-1] = packet
+							packets_found = packets_found + 1
+							if packets_found == _ID[1]:
+								return packets
 
 		   
 
