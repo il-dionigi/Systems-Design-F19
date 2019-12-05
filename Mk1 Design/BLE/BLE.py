@@ -6,7 +6,7 @@ import numpy as np
 
 # --- 3 Functions defined ---
 
-# def listen(UUID = "abc4", maxNumMessages = 5)
+# def listen(UUID = "ABC4", maxNumMessages = 5)
 # def broadcast_setup()
 # def broadcast(data, UUID = "ABC4", Number_of_Broadcast_Cycles = 3, Time_Between_Transmissions = 15)
 
@@ -126,7 +126,8 @@ class ScanDelegate(DefaultDelegate):
 		def __init__(self):
 				DefaultDelegate.__init__(self) 
 
-def listen(UUID = "abc4", maxNumMessages = 5):
+def listen(UUID = "ABC4", maxNumMessages = 5):
+	UUID = UUID.lower()
 	UUID = UUID[2:4] + UUID[0:2]
 	scanner = Scanner().withDelegate(ScanDelegate())
 

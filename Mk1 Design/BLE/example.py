@@ -3,7 +3,7 @@ import BLE
 device_type = 0
 
 # Rx Messages
-# def listen(UUID = "abc4", maxNumMessages = 5)
+# def listen(UUID = "ABC4", maxNumMessages = 5)
 if device_type == 0:
 	message = BLE.listen()
 
