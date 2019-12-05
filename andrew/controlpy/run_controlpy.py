@@ -50,12 +50,11 @@ Bootstrap(app)
 def format_ble_message(row, col, id, mode):
 	#Row, Columns are 8 bit unsigned numbers
 	row = np.uint8(row)
-	col = np.uint8(col)
+	col = np.uint8(col[1:])
 	id = np.uint8(id) # Check to see how many people are going to this thing...
 	mode = np.uint8(mode)
-	_array = np.array(([row, col, id, mode]), dtype=np.uint8)
-
-	_bytes = bytearray(_array)
+	#_array = np.array(([row, col, id, mode]), dtype=np.uint8)
+	_bytes = bytearray([row, col, id, mode])
 	print(_bytes)
 	return str(_bytes)
 	#Mode is the type of image being displayed.
