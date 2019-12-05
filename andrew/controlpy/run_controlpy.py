@@ -16,15 +16,19 @@ import gspread
 from oauth2client.client import SignedJwtAssertionCredentials
 import pandas as pd
 import json
-
+import numpy as np
 from flask import Flask, request, jsonify
 from flask import render_template
 from flask_bootstrap import Bootstrap
+
+from BLE.BLE import broadcast_setup, broadcast
 
 #Will use bootstrap for frontend
 
 #Structure of a BLE packet to send when broadcasting:
 #
+
+broadcast_setup()
 
 def process_loc(sync_loc):
 	temp_str = sync_loc
@@ -42,6 +46,34 @@ def process_loc(sync_loc):
 
 app = Flask(__name__)
 Bootstrap(app)
+
+def format_ble_message(row, col, id, mode):
+	#Row, Columns are 8 bit unsigned numbers
+	row = np.uint8(row)
+	col = np.uint8(col)
+	id = np.uint8(id) # Check to see how many people are going to this thing...
+	mode = np.uint8(mode)
+	_array = np.array(([row, col, id, mode]), dtype=np.uint8)
+
+	_bytes = bytearray(_array)
+	print(_bytes)
+	return str(_bytes)
+	#Mode is the type of image being displayed.
+
+def pack_ble_messages_syncall(pandas_dataframe):
+	ble_list = []
+	for index, row_iter in pandas_dataframe.iterrows():
+		#print(row_iter['row'])
+		#print(row_iter)
+		row = np.uint8(row_iter['row'])
+		col = np.uint8(row_iter['col'])
+		role_id = np.uint8(row_iter['role_id'])
+		mode = np.uint8(0)
+		ble_list.extend([row, col, role_id, mode])
+	print(ble_list)
+	_bytes = bytearray(ble_list)
+	print(_bytes)
+	return str(_bytes)
 
 def _init():
 
@@ -129,9 +161,13 @@ def hello():
 					if sync_loc == "SyncAll":
 						print('SyncAll')
 						#TODO: Send RESYNC All, retry twice!
+						ble_msg = pack_ble_messages_syncall(data)
+						broadcast(ble_msg)
 					else:
 						this_role, this_row, this_col = process_loc(sync_loc)
 						print(str(this_row))
+						ble_msg = format_ble_message(this_row, this_col, this_role, 0) #Assuming only one image displaying
+						broadcast(ble_msg)
 						#TODO: Send BLE command that sends the row and column to the role id
 
 			col_num += 1
