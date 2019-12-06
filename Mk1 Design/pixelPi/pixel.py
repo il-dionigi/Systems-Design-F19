@@ -40,12 +40,15 @@ def decodeMessages(messages):
 def getNewCoords():
 	positions = decodeMessages(BLE.listen())
 	#Work on this
-	myCoords = positions[myID]
-	Coords = [myCoords[1], myCoords[2]]
-	ListenFlag = 0
-	f = open("settings.csv", "w")
-	f.write(f"L,X,Y\n{ListenFlag},{X},{Y}")
-	f.close()
+	for i in range(0:len(positions)):
+		if myID is positions[i][0]:
+			myCoords = positions[i]
+			Coords = (myCoords[1], myCoords[2])
+			ListenFlag = 0
+			f = open("settings.csv", "w")
+			f.write(f"L,X,Y\n{ListenFlag},{X},{Y}")
+			f.close()
+			return
 
 Coords = (-1,-1)
 ListenFlag = 1
