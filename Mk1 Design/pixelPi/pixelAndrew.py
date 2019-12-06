@@ -1,5 +1,5 @@
-import board
-import neopixel
+#import board
+#import neopixel
 import BLE
 from PIL import Image
 
@@ -63,5 +63,6 @@ if device_type == 0:
 	list_decoded = decodemessage(message, load_my_role)
 	pixel_tuple = load_pixel_role(list_decoded[0], list_decoded[1], img = 'img' + list_decoded[3] + '.jpeg')
 
-	pixels = neopixel.NeoPixel(board.D18, 12)
-	pixels.fill(pixel_tuple)
+	print(pixel_tuple)
+	#pixels = neopixel.NeoPixel(board.D18, 12)
+	#pixels.fill(pixel_tuple)
