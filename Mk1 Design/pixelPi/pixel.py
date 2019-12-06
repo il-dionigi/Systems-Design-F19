@@ -8,6 +8,7 @@ import neopixel
 import IRModule
 import RPi.GPIO as GPIO
 import time
+import routines
 
 pixels = neopixel.NeoPixel(board.D18, 12)
 
@@ -116,6 +117,9 @@ def decodeMessages(messages):
 	return students
 
 def getNewCoords():
+	global Coords
+	global ListenFlag
+
 	positions = decodeMessages(BLE.listen())
 	#Work on this
 	myCoords = positions[myID]
@@ -134,18 +138,23 @@ with open('settings.csv', newline='') as csvfile:
 		ListenFlag = int(row['L'])
 		Coords = (int(row['X']), int(row['Y']))
 
-while (1):
-	if ListenFlag:
-		getNewCoords()
-		with open('settings.csv', newline='') as csvfile:
-			reader = csv.DictReader(csvfile)
-			for row in reader:
-				ListenFlag = int(row['L'])
-				Coords = (int(row['X']), int(row['Y']))
+pixels.fill((0, 0, 0))
 
+while not ListenFlag:
+	getNewCoords()
+	with open('settings.csv', newline='') as csvfile:
+		reader = csv.DictReader(csvfile)
+		for row in reader:
+			ListenFlag = int(row['L'])
+			Coords = (int(row['X']), int(row['Y']))
+
+pixels.fill((0, 255, 0))
+time.sleep(5)
+pixels.fill((0, 0, 0))
 
 try:    
-	time.sleep(5)
+	max_dim = (3,3) # Need to actually find this
+	gradient = (math.ceil(255/(max_dim[0]-1)), math.ceil(255/(max_dim[1]-1)))
 
 	# turn off verbose option and change callback function
 	# to the function created above - remote_callback()
@@ -158,14 +167,22 @@ try:
 	while True:
 		if ListenFlag:
 			getNewCoords()
-		with open('settings.csv', newline='') as csvfile:
-			reader = csv.DictReader(csvfile)
-			for row in reader:
-				ListenFlag = int(row['L'])
-				Coords = (int(row['X']), int(row['Y']))
-
-
-        
+		if routine == 0:
+			ListenFlag = 1
+		elif routine == 1:
+			for loop in range(5):
+				for i in range(max_dim[0]):
+					routines.horizontal_scroll(i,coords,max_dim,gradient)
+					time.sleep(0.25)
+		elif routine == 2:
+			for loop in range(5):
+				for i in range(max_dim[1]):
+					routines.vertical_scroll(i,coords,max_dim,gradient)
+					time.sleep(0.25)
+		else:
+			pixels.fill((0, 0, 0))
+			time.sleep(1)
+      
 except:
     ir.remove_callback()
     GPIO.cleanup(irPin)
