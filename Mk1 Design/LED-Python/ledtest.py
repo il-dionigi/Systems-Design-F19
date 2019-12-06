@@ -13,6 +13,8 @@ def horizontal_scroll(i,coords,max_dim,gradient):
 	px = gradient[0]*(i)
 	if px > 255:
 		px == 255
+	print(px)
+	print(255-px)
 	pixels.fill((px, 255-px, 0))
 
 def vertical_scroll(i,coords,max_dim,gradient):
