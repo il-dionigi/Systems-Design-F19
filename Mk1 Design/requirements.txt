@@ -1,10 +1,7 @@
 flask
-board
-neopixel
 numpy
-PIL
-csv
 matplotlib
 gspread
 pandas
-json
+rpi_ws281x
+adafruit-circuitpython-neopixel
