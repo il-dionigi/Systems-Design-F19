@@ -2,6 +2,9 @@
 #import neopixel
 import BLE
 from PIL import Image
+import os
+import numpy as np
+from BLE import broadcast_setup, broadcast, listen
 
 #When receives a radio message, save to file
 #Then attempt to load the file
@@ -37,7 +40,7 @@ def loop_listen():
 	#while(message != ""):
 	#	message = BLE_listen()
 	#return message
-	message = BLE_listen()
+	message = listen()
 	return message
 
 def load_file(file = "save.txt"):
