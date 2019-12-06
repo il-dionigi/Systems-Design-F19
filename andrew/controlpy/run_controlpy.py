@@ -68,6 +68,7 @@ def pack_ble_messages_syncall(pandas_dataframe):
 		col = np.uint8(row_iter['col'])
 		role_id = np.uint8(row_iter['role_id'])
 		mode = np.uint8(0)
+		#This is a size of 32 bits
 		ble_list.extend([row, col, role_id, mode])
 	print(ble_list)
 	_bytes = bytearray(ble_list)
