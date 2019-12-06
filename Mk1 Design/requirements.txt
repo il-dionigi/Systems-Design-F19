@@ -1,0 +1,10 @@
+flask
+board
+neopixel
+numpy
+PIL
+csv
+matplotlib
+gspread
+pandas
+json
