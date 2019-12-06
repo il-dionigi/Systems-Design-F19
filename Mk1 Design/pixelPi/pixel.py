@@ -56,13 +56,14 @@ with open('settings.csv', newline='') as csvfile:
 		ListenFlag = int(row['L'])
 		Coords = (int(row['X']), int(row['Y']))
 
-if ListenFlag:
-	getNewCoords()
-	with open('settings.csv', newline='') as csvfile:
-		reader = csv.DictReader(csvfile)
-		for row in reader:
-			ListenFlag = int(row['L'])
-			Coords = (int(row['X']), int(row['Y']))
+while (1):
+	if ListenFlag:
+		getNewCoords()
+		with open('settings.csv', newline='') as csvfile:
+			reader = csv.DictReader(csvfile)
+			for row in reader:
+				ListenFlag = int(row['L'])
+				Coords = (int(row['X']), int(row['Y']))
 
 
 
