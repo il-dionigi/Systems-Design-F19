@@ -22,6 +22,8 @@ from flask import render_template
 from flask_bootstrap import Bootstrap
 
 from BLE.BLE import broadcast_setup, broadcast
+from encoder import encodeMessages, decodeMessages
+from Node import Node
 
 #Will use bootstrap for frontend
 
@@ -59,23 +61,25 @@ def format_ble_message(row, col, id, mode):
 	return str(_bytes)
 	#Mode is the type of image being displayed.
 
-#GroupID
-
 def pack_ble_messages_syncall(pandas_dataframe):
 	ble_list = []
+	Node_list = []
 	for index, row_iter in pandas_dataframe.iterrows():
 		#print(row_iter['row'])
 		#print(row_iter)
+		#Old code
 		row = np.uint8(row_iter['row'])
 		col = np.uint8(row_iter['col'])
 		role_id = np.uint8(row_iter['role_id'])
 		mode = np.uint8(0)
-		#This is a size of 32 bits
-		ble_list.extend([row, col, role_id, mode])
-	print(ble_list)
-	_bytes = bytearray(ble_list)
-	print(_bytes)
-	return str(_bytes)
+		#New Code
+		#ble_list.extend([row, col, role_id, mode])Old
+		new_node = Node(int(role_id))
+		new_node.x = int(row)
+		new_node.y = int(row)
+		Node_list.append(new_node)
+	msg = encodeMessages(Node_list)
+	return msg
 
 def _init():
 
@@ -123,6 +127,7 @@ def hello():
 	max_col = data["col"].max()
 	#print("max_row: " + str(max_row) + "max_col: " + str(max_col))
 	#TODO: Bugfix this to have a container that isnt completely empty!
+	node_list = []
 	for row in range(0, max_row + 1):
 		#print(row)
 		rows += """ <div class="row"> \n\t {} \n\t </div> """
