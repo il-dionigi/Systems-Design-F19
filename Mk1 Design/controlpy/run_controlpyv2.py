@@ -188,11 +188,27 @@ def hello():
 	#print(str(container))
 	return render_template("template.html", data_content=container)
 
+def simulate_website():
+	Node_list = []
+	row = 0
+	col = 1
+	for i in range(0, 2):
+		role_id = i
+		Node_list.append((role_id, row, col))
+	msg = encodeMessage(Node_list)
+	sync_msg = ''
+	for i in range(len(msg)):
+		sync_msg += str(msg[i])
+	print(sync_msg)
+	print(decodeMessage(sync_msg))
+	broadcast(sync_msg)
+
 if __name__ == "__main__":
 	#data = _init()
 	#a = hello()
 	#app = Flask(__name__)
 	#Bootstrap(app)
 	print('Starting run')
-	hello()
-	app.run(debug=True)
+	simulate_website()
+	#hello()
+	#app.run(debug=True)
