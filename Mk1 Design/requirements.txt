@@ -1,4 +1,5 @@
 flask
+flask_bootstrap
 numpy
 matplotlib
 gspread
@@ -6,3 +7,4 @@ pandas
 rpi_ws281x
 adafruit-circuitpython-neopixel
 Pillow
+oauth2client

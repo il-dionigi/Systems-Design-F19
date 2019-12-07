@@ -194,3 +194,5 @@ if __name__ == "__main__":
 	#app = Flask(__name__)
 	#Bootstrap(app)
 	app.run(debug=True)
+	print('Starting run')
+	hello()
