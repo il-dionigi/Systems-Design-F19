@@ -30,6 +30,8 @@ from Node import Node
 #Structure of a BLE packet to send when broadcasting:
 #
 
+app = Flask(__name__)
+
 broadcast_setup()
 
 def process_loc(sync_loc):
@@ -185,7 +187,7 @@ def hello():
 						ble_msg = format_ble_message(this_row, this_col, this_role, 0) #Assuming only one image displaying
 						broadcast(ble_msg)
 						#TODO: Send BLE command that sends the row and column to the role id
-	#print(str(container))
+	print(str(container))
 	return render_template("template.html", data_content=container)
 
 def simulate_website():
@@ -207,12 +209,9 @@ def simulate_website():
 	#broadcast('hello')
 
 if __name__ == "__main__":
-	#data = _init()
-	#a = hello()
-	app = Flask(__name__)
-	Bootstrap(app)
+	#Bootstrap(app)
 	#print('Starting run')
-	for i in range(10):
-		simulate_website()
+	#for i in range(10):
+	#	simulate_website()
 	#hello()
-	app.run(debug=True, host='0.0.0.0', port = 80)
+	app.run(debug=True, host = '0.0.0.0', port = 80)
