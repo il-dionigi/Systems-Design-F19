@@ -72,6 +72,7 @@ def broadcast(data, UUID = "ABC4", Number_of_Broadcast_Cycles = 3, Time_Between_
 			command = preamble + ServiceID
 			for l in msg[i*20:i*20+20]:
 				hexnum = str(hex(ord(l)))
+				print(hexnum)
 				command = command + hexnum[2] + hexnum[3] + " "
 
 			#print(command) # Uncomment if not on Pi
