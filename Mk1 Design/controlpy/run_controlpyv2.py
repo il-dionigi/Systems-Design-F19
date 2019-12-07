@@ -190,9 +190,11 @@ def hello():
 
 def simulate_website():
 	Node_list = []
-	row = 0
-	col = 1
+	row = 3
+	col = 5
 	for i in range(0, 2):
+		row = row + i
+		col = col + i
 		role_id = i
 		Node_list.append((role_id, row, col))
 	msg = encodeMessage(Node_list)
@@ -208,9 +210,9 @@ if __name__ == "__main__":
 	#data = _init()
 	#a = hello()
 	app = Flask(__name__)
-	#Bootstrap(app)
-	print('Starting run')
+	Bootstrap(app)
+	#print('Starting run')
 	for i in range(10):
 		simulate_website()
 	#hello()
-	app.run(debug=True)
+	app.run(debug=True, host='0.0.0.0', port = 80)
