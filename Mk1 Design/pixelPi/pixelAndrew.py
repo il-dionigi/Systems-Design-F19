@@ -8,7 +8,7 @@ from BLE import broadcast_setup, broadcast, listen
 
 #When receives a radio message, save to file
 #Then attempt to load the file
-
+BLE_broadcast_setup()
 device_type = 0 #This is a receiver
 
 def load_my_role(file = 'role.txt'):

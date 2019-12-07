@@ -44,56 +44,56 @@ routine = -1
 
 def remote_callback(code):
 	global routine
-    # Codes listed below are for the
-    # Sparkfun 9 button remote
+	# Codes listed below are for the
+	# Sparkfun 9 button remote
 
-    if code == 16582903:
-        #Pressed: 1
-        routine = 1
+	if code == 16582903:
+		#Pressed: 1
+		routine = 1
 
-    elif code == 16615543:
-        #Pressed: 2
-        routine = 2
-       	
-    elif code == 16599223:
-        #Pressed: 3
-        routine = 3
+	elif code == 16615543:
+		#Pressed: 2
+		routine = 2
+		
+	elif code == 16599223:
+		#Pressed: 3
+		routine = 3
 
-    elif code == 16591063:
-        #Pressed: 4
-        routine = 4
+	elif code == 16591063:
+		#Pressed: 4
+		routine = 4
 
-    elif code == 16623703:
-        #Pressed: 5
-        routine = 5
+	elif code == 16623703:
+		#Pressed: 5
+		routine = 5
 
-    elif code == 16607383:
-        #Pressed: 6
-        routine = 6
+	elif code == 16607383:
+		#Pressed: 6
+		routine = 6
 
-    elif code == 16586983:
-        #Pressed: 7
-        routine = 7
+	elif code == 16586983:
+		#Pressed: 7
+		routine = 7
 
-    elif code == 16619623:
-        #Pressed: 8
-        routine = 8
+	elif code == 16619623:
+		#Pressed: 8
+		routine = 8
 
-    elif code == 16603303:
-        #Pressed: 9
-        routine = 9
+	elif code == 16603303:
+		#Pressed: 9
+		routine = 9
 
-    elif code == 16593103:
-        #Pressed: 0
-        routine = 0
+	elif code == 16593103:
+		#Pressed: 0
+		routine = 0
 
-    elif code == 16605343:
-        #Pressed: Stop
-        routine = -1
+	elif code == 16605343:
+		#Pressed: Stop
+		routine = -1
 
-    else:
-    	routine = -1
-    return
+	else:
+		routine = -1
+	return
 
 def decodeMessages(messages):
 	chunks, chunksize = math.ceil(len(messages)/20), 20
@@ -122,7 +122,7 @@ def getNewCoords():
 
 	positions = decodeMessages(BLE.listen())
 	#Work on this
-	for i in range(0:len(positions)):
+	for i in range(len(positions)):
 		if myID is positions[i][0]:
 			myCoords = positions[i]
 			Coords = (myCoords[1], myCoords[2])
@@ -141,9 +141,9 @@ with open('settings.csv', newline='') as csvfile:
 		ListenFlag = int(row['L'])
 		Coords = (int(row['X']), int(row['Y']))
 
-pixels.fill((0, 0, 0))
+pixels.fill((0, 255, 0))
 
-while not ListenFlag:
+while ListenFlag:
 	getNewCoords()
 	with open('settings.csv', newline='') as csvfile:
 		reader = csv.DictReader(csvfile)
@@ -185,10 +185,10 @@ try:
 		else:
 			pixels.fill((0, 0, 0))
 			time.sleep(1)
-      
+	  
 except:
-    ir.remove_callback()
-    GPIO.cleanup(irPin)
+	ir.remove_callback()
+	GPIO.cleanup(irPin)
 
 
 
