@@ -22,7 +22,7 @@ from flask import render_template
 from flask_bootstrap import Bootstrap
 
 from BLE.BLE import broadcast_setup, broadcast
-from encoder import encodeMessages, decodeMessages
+from encoder import encodeMessage, decodeMessage
 from Node import Node
 
 #Will use bootstrap for frontend
@@ -62,7 +62,6 @@ def format_ble_message(row, col, id, mode):
 	#Mode is the type of image being displayed.
 
 def pack_ble_messages_syncall(pandas_dataframe):
-	ble_list = []
 	Node_list = []
 	for index, row_iter in pandas_dataframe.iterrows():
 		#print(row_iter['row'])
@@ -74,12 +73,17 @@ def pack_ble_messages_syncall(pandas_dataframe):
 		mode = np.uint8(0)
 		#New Code
 		#ble_list.extend([row, col, role_id, mode])Old
-		new_node = Node(int(role_id))
-		new_node.x = int(row)
-		new_node.y = int(row)
-		Node_list.append(new_node)
-	msg = encodeMessages(Node_list)
-	return msg
+		#new_node = Node(int(role_id))
+		#new_node.x = int(row)
+		#new_node.y = int(row)
+		Node_list.append((role_id, row, col))
+	msg = encodeMessage(Node_list)
+	sync_msg = ''
+	for i in range(len(msg)):
+		sync_msg += str(msg[i])
+	print(sync_msg)
+	print(decodeMessage(sync_msg))
+	return sync_msg
 
 def _init():
 
@@ -161,8 +165,13 @@ def hello():
 				#print("_button: " + str(button))
 				#row.format(str_subdata)
 				#rows.format(row_num)
-
-				if request.method == 'POST':
+			col_num += 1
+		#print(rows)
+		#print(_row)
+		rows = rows.format(_row)
+		row_num += 1
+	container = container.format(rows)
+	if request.method == 'POST':
 					sync_loc = request.form.get('SyncBtn')
 					#print(sync_loc)
 					if sync_loc == "SyncAll":
@@ -176,13 +185,6 @@ def hello():
 						ble_msg = format_ble_message(this_row, this_col, this_role, 0) #Assuming only one image displaying
 						broadcast(ble_msg)
 						#TODO: Send BLE command that sends the row and column to the role id
-
-			col_num += 1
-		#print(rows)
-		#print(_row)
-		rows = rows.format(_row)
-		row_num += 1
-	container = container.format(rows)
 	#print(str(container))
 	return render_template("template.html", data_content=container)
 
