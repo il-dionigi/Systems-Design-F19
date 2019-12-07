@@ -132,8 +132,6 @@ def getNewCoords():
 			f.close()
 			return
 
-print("HERE")
-
 Coords = (-1,-1)
 ListenFlag = 1
 
@@ -145,7 +143,7 @@ with open('settings.csv', newline='') as csvfile:
 
 pixels.fill((0, 255, 0))
 
-while not ListenFlag:
+while ListenFlag:
 	getNewCoords()
 	with open('settings.csv', newline='') as csvfile:
 		reader = csv.DictReader(csvfile)
