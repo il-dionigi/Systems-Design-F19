@@ -93,6 +93,7 @@ def getNewCoords():
 	global Coords
 	global ListenFlag
 	temp = BLE.listen()
+	temp = temp.replace('_', '')
 	print(temp)
 	positions = encoder.decodeMessage(temp)
 	#Work on this

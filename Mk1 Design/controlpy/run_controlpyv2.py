@@ -201,8 +201,9 @@ def simulate_website():
 		sync_msg += str(msg[i])
 	print(sync_msg)
 	print(decodeMessage(sync_msg))
-	broadcast(sync_msg)
-
+	#broadcast(sync_msg)
+	broadcast('hello')
+	
 if __name__ == "__main__":
 	#data = _init()
 	#a = hello()
