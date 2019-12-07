@@ -9,43 +9,39 @@ ypos_start = xpos_len # y starts at bit len(xpos in bits) in x+y bits
 xy_len = xpos_len + ypos_len # total lengh of x+y bits
 message_length = 20 * 8 # in bits
 group_id_len = 4 # bits used for group id
-group_size = math.floor((message_length-group_id_len) / xy_len) # currently 19
+group_size = 2^4 # currently 19
 
-def encodeMessages(map):    
+def encodeMessage(map):    
 	''' Function to encode seat positions for sending via message_length BLE broadcasts
 	Args:
-	@map (Array of Nodes): Map should have .x and .y set
+	@map (Array of Tuples or Arrays): Format of tuples/arrays is [(int)id, (int)x, (int)y]
 
 	Returns:
-	@messages (array of BitArrays): Creates the required number of messages
+	@ (string): String of encoded ids with their coords
 	'''
-    messages = []
-    group_num = -1
-    
-    for i in range(len(map)):
-        if i % group_size is 0:
-            messages.append(BitArray(''))
-            group_num = group_num + 1
-            messages[group_num].append(hex(group_num))
-        messages[group_num].append(hex(map[i].x))
-        messages[group_num].append(hex(map[i].y))
-        
-    return messages
+	sorted_map = sorted(map, key=lambda x: x[0])
+	message_ba = BitArray('')
+	
+	for i in range(len(sorted_map)):
+		message_ba.append(hex(sorted_map[i][0]>>4))
+		message_ba.append(hex(sorted_map[i][0]&0b1111))
+		message_ba.append(hex(sorted_map[i][1]))
+		message_ba.append(hex(sorted_map[i][2]))
 
-def decodeMessages(messages):
+	return message_ba.tobytes().decode('cp437')
+	
+def decodeMessage(message):
 	''' Function to decode seat positions for sending via message_length BLE broadcasts
 	Args:
-	@messages (array of BitArrays): Should contain all the arrays of from encodeMessages
+	@messages (string): Should be the full output from encodeMessage
 
 	Returns:
-	@students (array of int tuples): Format is [id, x, y]
+	@map (array of tuples): format of tuples is ((int)id, (int)x, (int)y)
 	'''
-    students = []
-    for message in messages:
-        message_bytes = message.tobytes()
-        group_num = int(message_bytes[0])>>4
-        for i in range(0, len(message.tobytes()) - 1):
-            byte1 = message_bytes[i]
-            byte2 = message_bytes[i+1]
-            students.append((group_num*i + i, int(byte1)&0b1111, int(byte2)>>4))
-    return students
+	seat_map = []
+	message_bytes = BitArray(message.encode('cp437')).tobytes()
+	for i in range(0, len(message_bytes),2):
+		byte0 = message_bytes[i]
+		byte1 = message_bytes[i+1]
+		seat_map.append((int(byte0), int(byte1)&0b1111, int(byte1)>>4))
+	return seat_map
