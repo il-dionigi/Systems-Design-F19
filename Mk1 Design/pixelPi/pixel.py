@@ -122,7 +122,7 @@ def getNewCoords():
 
 	positions = decodeMessages(BLE.listen())
 	#Work on this
-	for i in range(0:len(positions)):
+	for i in range(len(positions)):
 		if myID is positions[i][0]:
 			myCoords = positions[i]
 			Coords = (myCoords[1], myCoords[2])
