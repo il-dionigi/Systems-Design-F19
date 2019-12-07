@@ -21,7 +21,7 @@ from flask import Flask, request, jsonify
 from flask import render_template
 from flask_bootstrap import Bootstrap
 
-from BLE.BLE import broadcast_setup, broadcast
+from BLE import broadcast_setup, broadcast
 from encoder import encodeMessage, decodeMessage
 from Node import Node
 

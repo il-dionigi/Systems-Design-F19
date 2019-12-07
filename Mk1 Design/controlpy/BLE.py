@@ -1,8 +1,14 @@
-from BLE.btle import Scanner, DefaultDelegate
+from btle import Scanner, DefaultDelegate
 import os
 import math
 import time 
 import numpy as np
+
+# --- 3 Functions defined ---
+
+# def listen(UUID = "ABC4", maxNumMessages = 5)
+# def broadcast_setup()
+# def broadcast(data, UUID = "ABC4", Number_of_Broadcast_Cycles = 3, Time_Between_Transmissions = 15)
 
 # --- START OF BROADCAST DEFINITIONS ---
 
@@ -66,7 +72,10 @@ def broadcast(data, UUID = "ABC4", Number_of_Broadcast_Cycles = 3, Time_Between_
 			command = preamble + ServiceID
 			for l in msg[i*20:i*20+20]:
 				hexnum = str(hex(ord(l)))
-				command = command + hexnum[2] + hexnum[3] + " "
+				if int(ord(l)) > 0xf:
+					command = command + hexnum[2] + hexnum[3] + " "
+				else:
+					command = command + "0" + hexnum[2] + " "
 
 			#print(command) # Uncomment if not on Pi
 			os.system(command) # Uncomment if on Pi
@@ -120,7 +129,8 @@ class ScanDelegate(DefaultDelegate):
 		def __init__(self):
 				DefaultDelegate.__init__(self) 
 
-def listen(UUID = "abc4"):
+def listen(UUID = "ABC4", maxNumMessages = 5):
+	UUID = UUID.lower()
 	UUID = UUID[2:4] + UUID[0:2]
 	scanner = Scanner().withDelegate(ScanDelegate())
 
@@ -141,7 +151,7 @@ def listen(UUID = "abc4"):
 					_ID = get_ID(packet[0:4]) 
 					if _ID[0] < 0 or _ID[0] > _ID[1]:
 						pass
-					elif _ID[0] > 5 or _ID[1] > 5:
+					elif _ID[0] > maxNumMessages or _ID[1] > maxNumMessages:
 						pass
 					else:
 						#print(get_Message(packet))
