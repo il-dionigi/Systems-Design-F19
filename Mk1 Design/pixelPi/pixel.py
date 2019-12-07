@@ -38,7 +38,10 @@ GPIO.setmode(GPIO.BCM)      # uses numbering outside circles
 GPIO.setup(irPin,GPIO.IN)   # set irPin to input
 GPIO.add_event_detect(irPin,GPIO.BOTH,callback=ir.pWidth)
 
-ir.set_verbose(False) # verbose option prints outs high and low width durations (ms)
+# turn off verbose option and change callback function
+# to the function created above - remote_callback()
+ir.set_verbose(False)
+ir.set_callback(remote_callback)
 
 routine = -1
 
@@ -130,7 +133,7 @@ def getNewCoords():
 			f = open("settings.csv", "w")
 			f.write(f"L,X,Y\n{ListenFlag},{X},{Y}")
 			f.close()
-			return
+	return
 
 Coords = (-1,-1)
 ListenFlag = 1
@@ -141,7 +144,7 @@ with open('settings.csv', newline='') as csvfile:
 		ListenFlag = int(row['L'])
 		Coords = (int(row['X']), int(row['Y']))
 
-pixels.fill((0, 255, 0))
+pixels.fill((0, 0, 255))
 
 while ListenFlag:
 	getNewCoords()
@@ -158,11 +161,6 @@ pixels.fill((0, 0, 0))
 try:    
 	max_dim = (3,3) # Need to actually find this
 	gradient = (math.ceil(255/(max_dim[0]-1)), math.ceil(255/(max_dim[1]-1)))
-
-	# turn off verbose option and change callback function
-	# to the function created above - remote_callback()
-	ir.set_verbose(False)
-	ir.set_callback(remote_callback)
 
 	# This is where you could do other stuff
 	# Blink a light, turn a motor, run a webserver
