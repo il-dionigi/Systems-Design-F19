@@ -90,8 +90,7 @@ def remote_callback(code):
 		routine = -1
 
 	else:
-		print("Pressed: Stop")
-		routine = -1
+		routine = -2
 	return
 
 # turn off verbose option and change callback function
@@ -145,7 +144,7 @@ with open('settings.csv', newline='') as csvfile:
 		ListenFlag = int(row['L'])
 		Coords = (int(row['X']), int(row['Y']))
 
-pixels.fill((0, 0, 255))
+pixels.fill((0, 0, 155))
 
 while ListenFlag:
 	getNewCoords()
