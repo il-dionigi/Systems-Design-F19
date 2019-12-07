@@ -105,6 +105,7 @@ def getNewCoords():
 			f = open("settings.csv", "w")
 			f.write(f"L,X,Y\n{ListenFlag},{Coords[0]},{Coords[1]}")
 			f.close()
+	routine = -1
 	return
 
 Coords = (-1,-1)
