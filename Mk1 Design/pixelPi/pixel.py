@@ -132,6 +132,8 @@ def getNewCoords():
 			f.close()
 			return
 
+print("HERE")
+
 Coords = (-1,-1)
 ListenFlag = 1
 
