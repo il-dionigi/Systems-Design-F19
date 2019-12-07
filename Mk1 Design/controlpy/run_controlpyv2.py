@@ -209,6 +209,7 @@ if __name__ == "__main__":
 	#app = Flask(__name__)
 	#Bootstrap(app)
 	print('Starting run')
-	simulate_website()
+	for i in range(10):
+		simulate_website()
 	#hello()
 	#app.run(debug=True)

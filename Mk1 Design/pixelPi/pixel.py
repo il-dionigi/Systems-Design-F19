@@ -92,8 +92,9 @@ ir.set_callback(remote_callback)
 def getNewCoords():
 	global Coords
 	global ListenFlag
-
-	positions = encoder.decodeMessage(BLE.listen())
+	temp = BLE.listen()
+	print(temp)
+	positions = encoder.decodeMessage(temp)
 	#Work on this
 	for i in range(len(positions)):
 		if myID is positions[i][0]:
