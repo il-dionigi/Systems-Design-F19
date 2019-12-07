@@ -153,6 +153,8 @@ while ListenFlag:
 		for row in reader:
 			ListenFlag = int(row['L'])
 			Coords = (int(row['X']), int(row['Y']))
+	print(routine)
+	time.sleep(1)
 
 pixels.fill((0, 255, 0))
 time.sleep(5)
