@@ -13,7 +13,7 @@ import encoder
 
 pixels = neopixel.NeoPixel(board.D18, 12)
 
-myID = 2
+myID = 1
 # set up IR pi pin and IR remote object
 irPin = 16
 ir = IRModule.IRRemote(callback='DECODE')
@@ -103,7 +103,7 @@ def getNewCoords():
 			Coords = (myCoords[1], myCoords[2])
 			ListenFlag = 0
 			f = open("settings.csv", "w")
-			f.write(f"L,X,Y\n{ListenFlag},{X},{Y}")
+			f.write(f"L,X,Y\n{ListenFlag},{Coords[0]},{Coords[1]}")
 			f.close()
 	return
 
@@ -147,18 +147,19 @@ try:
 		elif routine == 1:
 			for loop in range(5):
 				for i in range(max_dim[0]):
-					routines.horizontal_scroll(i,coords,max_dim,gradient)
+					routines.horizontal_scroll(pixels,i,Coords,max_dim,gradient)
 					time.sleep(0.25)
 		elif routine == 2:
 			for loop in range(5):
 				for i in range(max_dim[1]):
-					routines.vertical_scroll(i,coords,max_dim,gradient)
+					routines.vertical_scroll(pixels,i,Coords,max_dim,gradient)
 					time.sleep(0.25)
 		else:
 			pixels.fill((0, 0, 0))
 			time.sleep(1)
-	  
-except:
+
+except Exception as e:
+	print(e)
 	ir.remove_callback()
 	GPIO.cleanup(irPin)
 
