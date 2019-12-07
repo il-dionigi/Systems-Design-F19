@@ -201,16 +201,16 @@ def simulate_website():
 		sync_msg += str(msg[i])
 	print(sync_msg)
 	print(decodeMessage(sync_msg))
-	#broadcast(sync_msg)
-	broadcast('hello')
-	
+	broadcast(sync_msg)
+	#broadcast('hello')
+
 if __name__ == "__main__":
 	#data = _init()
 	#a = hello()
-	#app = Flask(__name__)
+	app = Flask(__name__)
 	#Bootstrap(app)
 	print('Starting run')
 	for i in range(10):
 		simulate_website()
 	#hello()
-	#app.run(debug=True)
+	app.run(debug=True)
