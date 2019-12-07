@@ -141,7 +141,7 @@ with open('settings.csv', newline='') as csvfile:
 		ListenFlag = int(row['L'])
 		Coords = (int(row['X']), int(row['Y']))
 
-pixels.fill((0, 0, 0))
+pixels.fill((0, 255, 0))
 
 while not ListenFlag:
 	getNewCoords()
