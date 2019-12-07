@@ -38,11 +38,6 @@ GPIO.setmode(GPIO.BCM)      # uses numbering outside circles
 GPIO.setup(irPin,GPIO.IN)   # set irPin to input
 GPIO.add_event_detect(irPin,GPIO.BOTH,callback=ir.pWidth)
 
-# turn off verbose option and change callback function
-# to the function created above - remote_callback()
-ir.set_verbose(False)
-ir.set_callback(remote_callback)
-
 routine = -1
 
 def remote_callback(code):
@@ -97,6 +92,11 @@ def remote_callback(code):
 	else:
 		routine = -1
 	return
+
+# turn off verbose option and change callback function
+# to the function created above - remote_callback()
+ir.set_verbose(False)
+ir.set_callback(remote_callback)
 
 def decodeMessages(messages):
 	chunks, chunksize = math.ceil(len(messages)/20), 20
