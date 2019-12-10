@@ -35,6 +35,7 @@ pixels = neopixel.NeoPixel(board.D18, 12)
 
 Coords = (-1,-1)
 ListenFlag = 1
+myID = -1
 
 def getNewCoords(Coords):
     global ListenFlag
