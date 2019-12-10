@@ -47,7 +47,7 @@ io.output(led_g, 0)
 io.setup(led_b, io.OUT)
 io.output(led_b, 0)
 
-def toggle_led(r, g, b, time = 0.0)
+def toggle_led(r, g, b, time = 0.0):
 
 	if time == 0.0:
 		io.output(led_b, b)
