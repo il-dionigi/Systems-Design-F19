@@ -31,6 +31,8 @@ import BLE
 import csv
 import encoder
 
+settings_address = "/home/pi/settings.csv"
+
 pixels = neopixel.NeoPixel(board.D18, 12)
 
 Coords = (-1,-1)
@@ -49,21 +51,22 @@ def getNewCoords(Coords):
             myCoords = positions[i]
             Coords = (myCoords[1], myCoords[2])
             ListenFlag = 0
-            f = open("settings.csv", "w")
-            f.write(f"L,X,Y\n{ListenFlag},{Coords[0]},{Coords[1]}")
+            f = open(settings_address, "w")
+            f.write(f"L,X,Y,ID\n{ListenFlag},{Coords[0]},{Coords[1]},{myID}")
             f.close()
     return Coords
 
-with open('settings.csv', newline='') as csvfile:
+with open(settings_address, newline='') as csvfile:
     pixels.fill((155,0,0))
     reader = csv.DictReader(csvfile)
     for row in reader:
         ListenFlag = int(row['L'])
         Coords = (int(row['X']), int(row['Y']))
+        myID = int(row['ID'])
 
 while ListenFlag:
     Coords = getNewCoords(Coords)
-    with open('settings.csv', newline='') as csvfile:
+    with open(settings_address, newline='') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             ListenFlag = int(row['L'])
