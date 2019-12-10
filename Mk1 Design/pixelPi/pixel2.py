@@ -53,7 +53,7 @@ def getNewCoords(Coords, ListenFlag):
     return Coords
 
 with open('settings.csv', newline='') as csvfile:
-    pixels.fill(155,0,0)
+    pixels.fill((155,0,0))
     reader = csv.DictReader(csvfile)
     for row in reader:
         ListenFlag = int(row['L'])
@@ -71,9 +71,9 @@ while ListenFlag:
 
 delay = Coords[0]+1
 
-pixels.fill(0,155,0)
+pixels.fill((0,155,0))
 time.sleep(4)
-pixels.fill(0,0,0)
+pixels.fill((0,0,0))
 
 def remote_callback(code):
     global delay
