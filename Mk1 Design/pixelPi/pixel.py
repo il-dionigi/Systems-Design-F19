@@ -195,7 +195,7 @@ try:
 		elif routine == 1:
 			pass
 		elif routine == -1:
-			routine = -1
+			print('Here')
 			# time.sleep(1)
 			# pixels.fill((0, 0, 0))
 except Exception as e:
