@@ -1,3 +1,5 @@
+import csv
+
 settings_address = "/home/pi/settings.csv"
 
 L = 1
@@ -6,7 +8,6 @@ Y = -1
 myID = -1 
 
 with open(settings_address, newline='') as csvfile:
-    pixels.fill((155,0,0))
     reader = csv.DictReader(csvfile)
     for row in reader:
         myID = int(row['ID'])
