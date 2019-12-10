@@ -165,6 +165,11 @@ try:
 			getNewCoords()
 		if routine == 0:
 			ListenFlag = 1
+except Exception as e:
+	print(e)
+	ir.remove_callback()
+	GPIO.cleanup(irPin)
+
 	'''
 	max_dim = (4,4) # Need to actually find this
 	gradient = (math.ceil(255/(max_dim[0]-1)), math.ceil(255/(max_dim[1]-1)))
@@ -193,12 +198,4 @@ try:
 			print('Here')
 			time.sleep(1)
 			# pixels.fill((0, 0, 0))
-	'''
-
-except Exception as e:
-	print(e)
-	ir.remove_callback()
-	GPIO.cleanup(irPin)
-
-
-
+'''
