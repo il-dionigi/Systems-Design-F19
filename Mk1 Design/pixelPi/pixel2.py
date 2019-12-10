@@ -67,6 +67,7 @@ while ListenFlag:
         for row in reader:
             ListenFlag = int(row['L'])
             Coords = (int(row['X']), int(row['Y']))
+            myID = int(row['ID'])
     print(routine)
     time.sleep(1)
 
