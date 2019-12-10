@@ -32,24 +32,42 @@ GPIO.add_event_detect(irPin,GPIO.BOTH,callback=ir.pWidth)
 routine = -1
 
 def remote_callback(code):
-	global routine
+	global routine, Coords
+
+	max_dim = (4,4) # Need to actually find this
+	gradient = (math.ceil(256/(max_dim[0]-1)), math.ceil(256/(max_dim[1]-1)))
+
 	# Codes listed below are for the
 	# Sparkfun 9 button remote
 
 	if code == 16582903:
 		print("Pressed: 1")
 		for loop in range(5):
-				for i in range(max_dim[0]):
-					routines.horizontal_scroll(pixels,i,Coords,max_dim,gradient)
-					time.sleep(2)
+			for i in range(max_dim[0]):
+				i = Coords[0] + i
+				if i > max_dim[0]:
+					i = i - max_dim[0]
+				px = gradient[0]*(i)
+				if px > 255:
+					px = 255
+				pixels.fill((px, 255-px, 0))
+				time.sleep(2)
 		# routine = 1
 
 	elif code == 16615543:
 		print("Pressed: 2")
 		for loop in range(5):
-				for i in range(max_dim[1]):
-					routines.vertical_scroll(pixels,i,Coords,max_dim,gradient)
-					time.sleep(2)
+			for i in range(max_dim[1]):
+				i = Coords[1] + i
+				if i > max_dim[1]:
+					i = i - max_dim[1]
+				px = gradient[1]*(i)
+				if px > 255:
+					px = 255
+				pixels.fill((px, 255-px, 0))
+				time.sleep(2)
+				# routines.vertical_scroll(pixels,i,Coords,max_dim,gradient)
+				# time.sleep(2)
 		# routine = 2
 		
 	elif code == 16605343:
