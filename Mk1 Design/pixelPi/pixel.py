@@ -81,14 +81,18 @@ def remote_callback(code):
 		while True:
 			if time.time() - oldTime > delta:
 				if iter%4 == 0:
+					print('Displaying Blue')
 					pixels.fill((0,0,255))
 				else:
+					print('Displaying Black')
 					pixels.fill((0,0,0))
 				iter = iter + 1
 				oldTime = time.time()
 
 			if oldTime - startTime > 12:
-				break
+				pixels.fill((0, 0, 0))
+				routine = -1
+				return
 		routine = -1
 
 	elif code == 16591063:
@@ -191,9 +195,9 @@ try:
 		elif routine == 1:
 			pass
 		elif routine == -1:
-			print('Here')
+			# print('Here')
 			time.sleep(1)
-			pixels.fill((0, 0, 0))
+			# pixels.fill((0, 0, 0))
 except Exception as e:
 	print(e)
 	ir.remove_callback()
