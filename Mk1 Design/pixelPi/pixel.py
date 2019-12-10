@@ -41,7 +41,7 @@ def remote_callback(code):
 		for loop in range(5):
 				for i in range(max_dim[0]):
 					routines.horizontal_scroll(pixels,i,Coords,max_dim,gradient)
-					time.sleep(0.25)
+					time.sleep(2)
 		# routine = 1
 
 	elif code == 16615543:
@@ -49,7 +49,7 @@ def remote_callback(code):
 		for loop in range(5):
 				for i in range(max_dim[1]):
 					routines.vertical_scroll(pixels,i,Coords,max_dim,gradient)
-					time.sleep(0.25)
+					time.sleep(2)
 		# routine = 2
 		
 	elif code == 16605343:
