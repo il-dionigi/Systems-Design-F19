@@ -39,7 +39,6 @@ led_r = 7 #gpio 4
 led_g = 11 #gpio 17
 led_b = 13 #gpio 27
 io.setmode(io.BOARD)
-io.setup(button, io.IN, pull_up_down=io.PUD_DOWN)
 io.setup(led_r, io.OUT)
 io.output(led_r, 0)
 io.setup(led_g, io.OUT)
