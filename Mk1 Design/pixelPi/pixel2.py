@@ -119,7 +119,7 @@ def remote_callback(code):
     elif code == 16599223:
         print('Pressed: 3')
         pixels.fill((0,0,100))
-    elif code == 16591063:
+    elif code == 16593103:
         print('Pressed: 4')
         pixels.fill((100,0,0))
         Coords = getNewCoords(Coords)
@@ -133,7 +133,7 @@ def remote_callback(code):
         print('Pressed: 8')
     elif code == 16603303:
         print('Pressed: 9')
-    elif code == 16593103:
+    elif code == 16591063:
         print('Pressed: 0')
         pixels.fill((255,255,255))
     elif code == 16605343:
