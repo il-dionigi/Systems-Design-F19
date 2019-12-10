@@ -1,4 +1,4 @@
-settings_address = "/home/pi/settins.csv"
+settings_address = "/home/pi/settings.csv"
 
 L = 1
 X = -1 
