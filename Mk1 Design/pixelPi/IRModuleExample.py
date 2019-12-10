@@ -25,9 +25,58 @@ import time
 import board
 import neopixel
 
+import math
+import Node
+import BLE
+import csv
+import encoder
+
 pixels = neopixel.NeoPixel(board.D18, 12)
 
+Coords = (-1,-1)
+ListenFlag = 1
+
+def getNewCoords(Coords, ListenFlag):
+    temp = BLE.listen()
+    temp = temp.replace('_', '')
+    print(temp)
+    positions = encoder.decodeMessage(temp)
+    #Work on this
+    for i in range(len(positions)):
+        if myID is positions[i][0]:
+            myCoords = positions[i]
+            Coords = (myCoords[1], myCoords[2])
+            ListenFlag = 0
+            f = open("settings.csv", "w")
+            f.write(f"L,X,Y\n{ListenFlag},{Coords[0]},{Coords[1]}")
+            f.close()
+    return Coords
+
+with open('settings.csv', newline='') as csvfile:
+    pixels.fill(155,0,0)
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        ListenFlag = int(row['L'])
+        Coords = (int(row['X']), int(row['Y']))
+
+while ListenFlag:
+    Coords = getNewCoords(Coords)
+    with open('settings.csv', newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            ListenFlag = int(row['L'])
+            Coords = (int(row['X']), int(row['Y']))
+    print(routine)
+    time.sleep(1)
+
+delay = Coords[0]+1
+
+pixels.fill(0,155,0)
+time.sleep(4)
+pixels.fill(0,0,0)
+
 def remote_callback(code):
+    global delay
 
     # Codes listed below are for the
     # Sparkfun 9 button remote
@@ -48,12 +97,14 @@ def remote_callback(code):
 
     if code == 16582903:
         print('Pressed: 1')
+
+        time.sleep(delay)
         pixels.fill((100,0,0))
-        time.sleep(0.5)
+        time.sleep(1)
         pixels.fill((0,0,0))
         time.sleep(3)
         pixels.fill((0,100,0))
-        time.sleep(0.5)
+        time.sleep(1)
         pixels.fill((0,0,0))
 
 

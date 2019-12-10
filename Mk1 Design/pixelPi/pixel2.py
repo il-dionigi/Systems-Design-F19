@@ -25,9 +25,63 @@ import time
 import board
 import neopixel
 
+import math
+import Node
+import BLE
+import csv
+import encoder
+
+settings_address = "/home/pi/settings.csv"
+
 pixels = neopixel.NeoPixel(board.D18, 12)
 
+Coords = (-1,-1)
+ListenFlag = 1
+myID = -1
+
+def getNewCoords(Coords):
+    global ListenFlag
+    temp = BLE.listen()
+    temp = temp.replace('_', '')
+    print(temp)
+    positions = encoder.decodeMessage(temp)
+    #Work on this
+    for i in range(len(positions)):
+        if myID is positions[i][0]:
+            myCoords = positions[i]
+            Coords = (myCoords[1], myCoords[2])
+            ListenFlag = 0
+            f = open(settings_address, "w")
+            f.write(f"L,X,Y,ID\n{ListenFlag},{Coords[0]},{Coords[1]},{myID}")
+            f.close()
+    return Coords
+
+with open(settings_address, newline='') as csvfile:
+    pixels.fill((155,0,0))
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        ListenFlag = int(row['L'])
+        Coords = (int(row['X']), int(row['Y']))
+        myID = int(row['ID'])
+
+while ListenFlag:
+    Coords = getNewCoords(Coords)
+    with open(settings_address, newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            ListenFlag = int(row['L'])
+            Coords = (int(row['X']), int(row['Y']))
+            myID = int(row['ID'])
+    time.sleep(1)
+
+delay = Coords[0]+1
+
+pixels.fill((0,155,0))
+time.sleep(4)
+pixels.fill((0,0,0))
+
 def remote_callback(code):
+    global delay, Coords
 
     # Codes listed below are for the
     # Sparkfun 9 button remote
@@ -48,12 +102,14 @@ def remote_callback(code):
 
     if code == 16582903:
         print('Pressed: 1')
+
+        time.sleep(delay)
         pixels.fill((100,0,0))
-        time.sleep(0.5)
+        time.sleep(1)
         pixels.fill((0,0,0))
         time.sleep(3)
         pixels.fill((0,100,0))
-        time.sleep(0.5)
+        time.sleep(1)
         pixels.fill((0,0,0))
 
 
@@ -63,8 +119,10 @@ def remote_callback(code):
     elif code == 16599223:
         print('Pressed: 3')
         pixels.fill((0,0,100))
-    elif code == 16591063:
+    elif code == 16593103:
         print('Pressed: 4')
+        pixels.fill((100,0,0))
+        Coords = getNewCoords(Coords)
     elif code == 16623703:
         print('Pressed: 5')
     elif code == 16607383:
@@ -75,7 +133,7 @@ def remote_callback(code):
         print('Pressed: 8')
     elif code == 16603303:
         print('Pressed: 9')
-    elif code == 16593103:
+    elif code == 16591063:
         print('Pressed: 0')
         pixels.fill((255,255,255))
     elif code == 16605343:
