@@ -90,8 +90,6 @@ def remote_callback(code):
 				oldTime = time.time()
 
 			if oldTime - startTime > 12:
-				pixels.fill((0, 0, 0))
-				routine = -1
 				break
 		routine = -1
 
@@ -196,8 +194,8 @@ try:
 			pass
 		elif routine == -1:
 			print('Here')
-			# time.sleep(1)
-			# pixels.fill((0, 0, 0))
+			time.sleep(1)
+			pixels.fill((0, 0, 0))
 except Exception as e:
 	print(e)
 	ir.remove_callback()
