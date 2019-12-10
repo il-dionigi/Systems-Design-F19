@@ -40,6 +40,7 @@ def remote_callback(code):
 	# Codes listed below are for the
 	# Sparkfun 9 button remote
 	curTime = time.time()
+	print(f"Code={code} at time={time.time()}")
 	if code == 16582903:
 		routine = 1
 		print("Pressed: 1")
@@ -90,9 +91,7 @@ def remote_callback(code):
 				oldTime = time.time()
 
 			if oldTime - startTime > 12:
-				pixels.fill((0, 0, 0))
-				routine = -1
-				return
+				break
 		routine = -1
 
 	elif code == 16591063:
@@ -195,9 +194,9 @@ try:
 		elif routine == 1:
 			pass
 		elif routine == -1:
-			# print('Here')
-			time.sleep(1)
-			# pixels.fill((0, 0, 0))
+			print('Here')
+			# time.sleep(1)
+			pixels.fill((0, 0, 0))
 except Exception as e:
 	print(e)
 	ir.remove_callback()
