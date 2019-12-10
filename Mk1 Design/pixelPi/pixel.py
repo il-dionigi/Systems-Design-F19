@@ -38,11 +38,19 @@ def remote_callback(code):
 
 	if code == 16582903:
 		print("Pressed: 1")
-		routine = 1
+		for loop in range(5):
+				for i in range(max_dim[0]):
+					routines.horizontal_scroll(pixels,i,Coords,max_dim,gradient)
+					time.sleep(0.25)
+		# routine = 1
 
 	elif code == 16615543:
 		print("Pressed: 2")
-		routine = 2
+		for loop in range(5):
+				for i in range(max_dim[1]):
+					routines.vertical_scroll(pixels,i,Coords,max_dim,gradient)
+					time.sleep(0.25)
+		# routine = 2
 		
 	elif code == 16605343:
 		print("Pressed: 3")
