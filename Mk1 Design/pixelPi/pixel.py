@@ -92,7 +92,7 @@ def remote_callback(code):
 			if oldTime - startTime > 12:
 				pixels.fill((0, 0, 0))
 				routine = -1
-				return
+				break
 		routine = -1
 
 	elif code == 16591063:
