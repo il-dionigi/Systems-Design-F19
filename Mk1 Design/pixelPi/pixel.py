@@ -40,6 +40,7 @@ def remote_callback(code):
 	# Codes listed below are for the
 	# Sparkfun 9 button remote
 	curTime = time.time()
+	print(f"Code={code} at time={time.time()}")
 	if code == 16582903:
 		routine = 1
 		print("Pressed: 1")
