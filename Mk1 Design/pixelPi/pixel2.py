@@ -36,7 +36,8 @@ pixels = neopixel.NeoPixel(board.D18, 12)
 Coords = (-1,-1)
 ListenFlag = 1
 
-def getNewCoords(Coords, ListenFlag):
+def getNewCoords(Coords):
+    global ListenFlag
     temp = BLE.listen()
     temp = temp.replace('_', '')
     print(temp)
@@ -76,7 +77,7 @@ time.sleep(4)
 pixels.fill((0,0,0))
 
 def remote_callback(code):
-    global delay
+    global delay, Coords
 
     # Codes listed below are for the
     # Sparkfun 9 button remote
@@ -116,6 +117,8 @@ def remote_callback(code):
         pixels.fill((0,0,100))
     elif code == 16591063:
         print('Pressed: 4')
+        pixels.fill((100,0,0))
+        Coords = getNewCoords(Coords)
     elif code == 16623703:
         print('Pressed: 5')
     elif code == 16607383:
