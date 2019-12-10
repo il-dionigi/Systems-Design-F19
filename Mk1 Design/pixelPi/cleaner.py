@@ -14,6 +14,6 @@ with open(settings_address, newline='') as csvfile:
 
 L = 1
 f = open(settings_address, "w")
-f.write(f"L,X,Y,ID\n{ListenFlag},{Coords[0]},{Coords[1]},{myID}")
+f.write(f"L,X,Y,ID\n{L},{X},{Y},{myID}")
 f.close()
     
