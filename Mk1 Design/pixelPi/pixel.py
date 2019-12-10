@@ -39,7 +39,7 @@ def remote_callback(code):
 
 	# Codes listed below are for the
 	# Sparkfun 9 button remote
-
+	curTime = time.time()
 	if code == 16582903:
 		print("Pressed: 1")
 		for loop in range(5):
@@ -160,6 +160,7 @@ time.sleep(5)
 pixels.fill((0, 0, 0))
 
 try:    
+	'''
 	max_dim = (4,4) # Need to actually find this
 	gradient = (math.ceil(255/(max_dim[0]-1)), math.ceil(255/(max_dim[1]-1)))
 
@@ -184,8 +185,10 @@ try:
 					time.sleep(0.25)
 			routine = -1
 		else:
-			pixels.fill((0, 0, 0))
+			print('Here')
 			time.sleep(1)
+			# pixels.fill((0, 0, 0))
+	'''
 
 except Exception as e:
 	print(e)
