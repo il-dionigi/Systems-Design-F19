@@ -48,13 +48,21 @@ def remote_callback(code):
 
     if code == 16582903:
         print('Pressed: 1')
-        pixels.fill((255,0,0))
+        pixels.fill((100,0,0))
+        time.sleep(0.5)
+        pixels.fill((0,0,0))
+        time.sleep(3)
+        pixels.fill((0,100,0))
+        time.sleep(0.5)
+        pixels.fill((0,0,0))
+
+
     elif code == 16615543:
         print('Pressed: 2')
-        pixels.fill((0,255,0))
+        pixels.fill((0,100,0))
     elif code == 16599223:
         print('Pressed: 3')
-        pixels.fill((0,0,255))
+        pixels.fill((0,0,100))
     elif code == 16591063:
         print('Pressed: 4')
     elif code == 16623703:
@@ -115,5 +123,6 @@ try:
 
 except:
     print('Removing callback and cleaning up GPIO')
+    pixels.fill((0,0,0))
     ir.remove_callback()
     GPIO.cleanup(irPin)
