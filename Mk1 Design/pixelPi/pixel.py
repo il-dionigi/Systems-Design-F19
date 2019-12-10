@@ -41,6 +41,7 @@ def remote_callback(code):
 	# Sparkfun 9 button remote
 	curTime = time.time()
 	if code == 16582903:
+		routine = 1
 		print("Pressed: 1")
 		for loop in range(5):
 			for i in range(max_dim[0]):
@@ -52,9 +53,10 @@ def remote_callback(code):
 					px = 255
 				pixels.fill((px, 255-px, 0))
 				time.sleep(2)
-		# routine = 1
+		routine = -1
 
 	elif code == 16615543:
+		routine = 1
 		print("Pressed: 2")
 		for loop in range(5):
 			for i in range(max_dim[1]):
@@ -68,7 +70,7 @@ def remote_callback(code):
 				time.sleep(2)
 				# routines.vertical_scroll(pixels,i,Coords,max_dim,gradient)
 				# time.sleep(2)
-		# routine = 2
+		routine = -1
 		
 	elif code == 16605343:
 		print("Pressed: 3")
@@ -172,21 +174,11 @@ try:
 		if routine == 0:
 			ListenFlag = 1
 		elif routine == 1:
-			for loop in range(5):
-				for i in range(max_dim[0]):
-					routines.horizontal_scroll(pixels,i,Coords,max_dim,gradient)
-					time.sleep(0.25)
-			routine = -1
-		elif routine == 2:
-			for loop in range(5):
-				for i in range(max_dim[1]):
-					routines.vertical_scroll(pixels,i,Coords,max_dim,gradient)
-					time.sleep(0.25)
-			routine = -1
+			pass
 		else:
 			print('Here')
 			time.sleep(1)
-			# pixels.fill((0, 0, 0))
+			pixels.fill((0, 0, 0))
 except Exception as e:
 	print(e)
 	ir.remove_callback()
