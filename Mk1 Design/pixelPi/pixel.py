@@ -150,11 +150,13 @@ try:
 				for i in range(max_dim[0]):
 					routines.horizontal_scroll(pixels,i,Coords,max_dim,gradient)
 					time.sleep(0.25)
+			routine = -1
 		elif routine == 2:
 			for loop in range(5):
 				for i in range(max_dim[1]):
 					routines.vertical_scroll(pixels,i,Coords,max_dim,gradient)
 					time.sleep(0.25)
+			routine = -1
 		else:
 			pixels.fill((0, 0, 0))
 			time.sleep(1)
