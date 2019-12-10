@@ -72,9 +72,23 @@ def remote_callback(code):
 				# time.sleep(2)
 		routine = -1
 		
-	elif code == 16605343:
-		print("Pressed: 3")
+	elif code == 16599223:
 		routine = 3
+		startTime = time.time()
+		oldTime = startTime
+		iter = Coords[0] + 2*Coords[1]
+		delta = 0.25
+		while True:
+			if time.time() - oldTime > delta:
+				if iter%4 == 0:
+					pixels.fill(0,0,255)
+				else:
+					pixels.fill(0,0,0)
+				iter = iter + 1
+				oldTime = time.time()
+
+			if oldTime - startTime > 4:
+				break
 
 	elif code == 16591063:
 		print("Pressed: 4")
@@ -104,7 +118,7 @@ def remote_callback(code):
 		print("Pressed: 0")
 		routine = 0
 
-	elif code == 16599223:
+	elif code == 16605343:
 		print("Pressed: Stop")
 		routine = -1
 
