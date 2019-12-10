@@ -142,7 +142,7 @@ time.sleep(5)
 pixels.fill((0, 0, 0))
 
 try:    
-	max_dim = (3,3) # Need to actually find this
+	max_dim = (4,4) # Need to actually find this
 	gradient = (math.ceil(255/(max_dim[0]-1)), math.ceil(255/(max_dim[1]-1)))
 
 	# This is where you could do other stuff
