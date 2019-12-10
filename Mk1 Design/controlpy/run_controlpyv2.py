@@ -24,6 +24,7 @@ from flask_bootstrap import Bootstrap
 from BLE import broadcast_setup, broadcast
 from encoder import encodeMessage, decodeMessage
 from Node import Node
+import RPi.GPIO as io
 
 #Will use bootstrap for frontend
 
@@ -33,6 +34,34 @@ from Node import Node
 app = Flask(__name__)
 
 broadcast_setup()
+
+led_r = 7 #gpio 4
+led_g = 11 #gpio 17
+led_b = 13 #gpio 27
+io.setmode(io.BOARD)
+io.setup(button, io.IN, pull_up_down=io.PUD_DOWN)
+io.setup(led_r, io.OUT)
+io.output(led_r, 0)
+io.setup(led_g, io.OUT)
+io.output(led_g, 0)
+io.setup(led_b, io.OUT)
+io.output(led_b, 0)
+
+def toggle_led(r, g, b, time = 0.0)
+
+	if time == 0.0:
+		io.output(led_b, b)
+		io.output(led_g, g)
+		io.output(led_r, r)
+	else:
+		io.output(led_b, b)
+		io.output(led_g, g)
+		io.output(led_r ,r)
+		time.sleep(0.1)
+		io.output(led_b, 0)
+		io.output(led_g, 0)
+		io.output(led_r, 0)
+	return
 
 def process_loc(sync_loc):
 	temp_str = sync_loc
@@ -123,6 +152,7 @@ def _init():
 
 @app.route("/", methods = ['POST', 'GET'])
 def hello():
+	toggle_led(255, 0, 0, time=0.0)
 	data = _init()
 	container = """<div class="container">\n\t{}
 	</div>
@@ -181,7 +211,9 @@ def hello():
 						#TODO: Send RESYNC All, retry twice!
 						ble_msg = pack_ble_messages_syncall(data)
 						broadcast(ble_msg)
+						toggle_led(0, 0, 255, time=0.1)
 					else:
+						toggle_led(0, 255, 0, time=0.1)
 						this_role, this_row, this_col = process_loc(sync_loc)
 						print(str(this_row))
 						ble_msg = format_ble_message(this_row, this_col, this_role, 0) #Assuming only one image displaying
