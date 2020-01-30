@@ -55,9 +55,6 @@ def on_message(client, userdata, msg):
         pixels.fill((0,0,0))
         pixels.show()
 
-
-
-#rainbow_cycle(0.001)
 # more callbacks, etc
 client = mqtt.Client()
 client.on_connect = on_connect
